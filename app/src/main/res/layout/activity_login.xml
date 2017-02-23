@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@mipmap/fondo_splash2"
+
+    tools:context=".view.activity.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:orientation="vertical"
+
+
+
+
+        android:gravity="center_vertical">
+
+<ImageView
+    android:layout_width="120dp"
+    android:layout_height="120dp"
+    android:layout_gravity="center_horizontal"
+     android:src="@drawable/logo_app"
+     />
+        <!--Boton de Ingreso -->
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:gravity="center">
+
+            <!--Titutlo -->
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+
+                />
+
+            <!-- Usuario -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario"
+                android:textColor="#fff"
+                />
+
+            <EditText
+                android:id="@+id/input_iniciar_sesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+
+                android:singleLine="true"
+                android:inputType="text"
+                android:imeOptions="actionNext"
+                 />
+            <!--android:text="GMSWF\\RRUIZC"-->
+            <!-- Cambiar Contraseña-->
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="#fff"
+                android:layout_height="wrap_content"
+                android:text="Contraseña"
+           />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+
+                android:id="@+id/layout_contrasenia">
+                <EditText
+                    android:id="@+id/input_contrasenia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="#fff"
+                    android:inputType="textPassword"
+                    android:imeOptions="actionDone"/>
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <!--Olvide contraseña-->
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_recuperar_clave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:paddingTop="18dp"
+
+            android:text="@string/texto_olvido_contrasena" />
+
+
+    </LinearLayout>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_ingreso"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/iniciar_sesion"
+        android:textColor="#fff"
+        android:padding="16dp"
+
+        android:textAllCaps="false"
+        android:background="@color/colorPrimary"
+        android:theme="@style/AppTheme.Button.iniciar">
+
+    </android.support.v7.widget.AppCompatButton>
+</LinearLayout>
+

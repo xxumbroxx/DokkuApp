@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00796B</color>
+    <color name="colorAccent">#607D8B</color>
+
+
+    <color name="fondo_slide">#ffffff</color>
+    <color name="button_slide">#000000</color>
+    <color name="color_texto_login">#000000</color>
+    <color name="color_caja_texto_login">#142112</color>
+    <color name="color_boton_iniciar_sesion">#545454</color>
+    <color name="color_text_boton_inciar">#fff</color>
+    <color name="terminos_condiciones">#000000</color>
+
+
+
+    <color name="transparent">#00ffffff</color>
+    <color name="red_tab_selected_icon">#f7f7f7</color><!--809B1417-->
+
+    <color name="primary">#009688</color>
+    <color name="primary_dark">#00796B</color>
+    <color name="primary_light">#B2DFDB</color>
+    <color name="accent">#607D8B</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+
+</resources>
