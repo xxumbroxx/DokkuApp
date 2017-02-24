@@ -51,7 +51,7 @@
             android:id="@+id/bt_back"
             android:src="@drawable/ic_arrow_back"
             android:layout_alignParentTop="true"
-            android:padding="10dp" />
+            android:padding="15dp" />
 
 
 
@@ -61,7 +61,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="12dp"
         android:enabled="true"
         android:textAllCaps="false"
         android:background="@color/button_slide"

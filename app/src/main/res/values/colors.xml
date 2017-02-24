@@ -13,8 +13,8 @@
     <color name="color_text_boton_inciar">#fff</color>
     <color name="terminos_condiciones">#000000</color>
 
-
-
+    <color name="slideColortitle">#424242</color>
+    <color name="slideColorText">#777777</color>
     <color name="transparent">#00ffffff</color>
     <color name="red_tab_selected_icon">#f7f7f7</color><!--809B1417-->
 
