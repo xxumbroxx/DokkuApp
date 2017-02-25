@@ -2,6 +2,7 @@ package pe.com.gmd.dokkuapp.view.activity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
@@ -35,15 +36,19 @@ public class SplashActivity extends AppCompatActivity {
         display = getWindowManager().getDefaultDisplay();
         width = display.getWidth();
         widthFloat = (float)width;
-        ImageView imgView=(ImageView) findViewById(R.id.imageView);
-//        Ion.with(imgView)
-//                //.error(R.drawable.default_image)
-//                .animateGif(AnimateGifMode.ANIMATE)
-//                .load("android.resource://" + getPackageName() + "/" + R.drawable.splash)
-//                .withBitmapInfo();
 
         ctx = this;
         timer = new Timer("SplashTimer",true);
+
+        /** En caso sólo sea necesario actualizar token de notificación **/
+        splash_task = new TimerTask() {
+            @Override
+            public void run() {
+                goToLogin();
+            }
+        };
+
+        timer.schedule(splash_task, 4500);
 
 
     }
@@ -63,6 +68,11 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
+    private void goToLogin(){
+        Intent i = new Intent(SplashActivity.this , LoginActivity.class);
+        startActivity(i);
+        finish();
+    }
 
 
 

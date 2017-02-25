@@ -33,7 +33,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/image_slide_1"
+            android:src="@mipmap/logo_dokku_splash"
             android:layout_gravity="center_horizontal"
             android:paddingBottom="10dp" />
 
@@ -42,6 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.28">
+
 
         <TextView
             android:id="@+id/slide_content_text"

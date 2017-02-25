@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#009688</color>
     <color name="colorPrimaryDark">#00796B</color>
-    <color name="colorAccent">#607D8B</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorSombra">#5a000000</color>
 
 
     <color name="fondo_slide">#ffffff</color>
