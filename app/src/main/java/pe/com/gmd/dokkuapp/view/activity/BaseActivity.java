@@ -26,8 +26,8 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activity = this;;
-        userService= (UserService) new UserServiceImpl();
-        user = userService.getCurrentUser();
+//        userService= (UserService) new UserServiceImpl();
+  //      user = userService.getCurrentUser();
     }
 
     public UserService getUserService() {
