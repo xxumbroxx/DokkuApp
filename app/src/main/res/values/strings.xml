@@ -11,8 +11,12 @@
     <string name="slide_txt_boton_omitir">Omitir</string>
     <string name="siguiente">Siguiente</string>
     <string name="slide_finalizar">Finalizar</string>
-    <string name="t1">UNO</string>
-    <string name="d1">Uno</string>
+    <string name="t1">Control Remoto</string>
+    <string name="d1">Controla tus cultivos a distancia a través de los distintos dispositivos disponibles</string>
+    <string name="t2">Mantente Informado</string>
+    <string name="d2">Podrás observar las condiciones climáticas y como éstas afectan a los cultivos</string>
+    <string name="t3">En cualquier momento</string>
+    <string name="d3">Podrás obtener información constante y actualizada de tus cultivos</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
 
     <string name="slide_one_title">On Boarding</string>
@@ -20,9 +24,9 @@
     <string name="slide_three_title">On Boarding3</string>
 
     <!-- On Biarding -->
-    <string name="p1">un super michel-grigori es la voz skmflñkwrmfklñwermfkermf asdfewfwefwefwefwefwefwef</string>
-    <string name="p2">un super ivan-jorge michel es la voz skmflñkwrmfklñwermfkermf asdfewfwefwefwefwefwefwef</string>
-    <string name="p3">un super michel-grigori-ivan-jorge es la voz skmflñkwrmfklñwermfkermf asdfewfwefwefwefwefwefwef</string>
+    <string name="p1">ASDASD</string>
+    <string name="p2">ASDASDASDASD</string>
+    <string name="p3">ASDASD</string>
 
 
 

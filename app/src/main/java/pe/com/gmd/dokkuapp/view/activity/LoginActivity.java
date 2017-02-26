@@ -94,7 +94,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
       if(validar()){
-          startActivity(new Intent(context,MainActivity.class));
+          //startActivity(new Intent(context,MainActivity.class));
+          startActivity(new Intent(context,SlideActivity.class));
       }
     }
 }

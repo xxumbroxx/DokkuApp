@@ -64,7 +64,7 @@
         android:padding="12dp"
         android:enabled="true"
         android:textAllCaps="false"
-        android:background="@color/button_slide"
+        android:background="@color/primary_dark"
         android:textColor="@android:color/white"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
