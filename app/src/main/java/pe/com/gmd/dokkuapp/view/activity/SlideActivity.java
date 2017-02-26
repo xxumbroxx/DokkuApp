@@ -128,7 +128,8 @@ public class SlideActivity extends BaseActivity implements ViewPager.OnPageChang
     }
 
     private void goToHistoriasActivity() {
-        callActivity(LoginActivity.class.getName());
+        callActivity(MainActivity.class.getName());
+        //callActivity(LoginActivity.class.getName());
         finish();
     }
 

@@ -17,7 +17,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import pe.com.gmd.dokkuapp.R;
+import pe.com.gmd.dokkuapp.view.fragment.EstadoCamposFragment;
+import pe.com.gmd.dokkuapp.view.fragment.InformacionGeneralFragment;
+import pe.com.gmd.dokkuapp.view.fragment.NotificacionesFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
     private static final int[] ICONS = new int[]{R.drawable.ic_resumen,R.drawable.ic_principal, R.drawable.ic_notificaciones/*, R.drawable.ic_contract,R.drawable.ic_constcenter*/};
     private final int COUNT_OPTIONS_TOOLBAR= 3;
     TabLayout tabLayout;
+    final List<Fragment> fragments = new ArrayList<>();
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +57,12 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+
+        fragments.add(InformacionGeneralFragment.newInstance("",""));
+        fragments.add(EstadoCamposFragment.newInstance("",""));
+        fragments.add(NotificacionesFragment.newInstance("",""));
+
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),fragments);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -56,13 +71,13 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        setTitle("DOKKU");
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()){
                     case 0:
-                        setTitle("Selección de campos");break;
+                        setTitle("Información general");break;
                     case 1:
                         setTitle("Estado de campos");break;
                     case 2:
@@ -77,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
                 View view = tab.getCustomView();
-                ((ImageView)view.findViewById(R.id.icon_tab_options)).setColorFilter(getResources().getColor(R.color.red_tab_selected_icon), PorterDuff.Mode.SRC_IN);
+                ((ImageView)view.findViewById(R.id.icon_tab_options)).setColorFilter(getResources().getColor(R.color.colorSombra), PorterDuff.Mode.SRC_IN);
             }
 
             @Override
@@ -86,9 +101,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         customIconTab();
-
+        initTab();
+        setTitle("Información general");
+        mViewPager.setCurrentItem(0);
     }
 
+    void initTab(){
+        View view = tabLayout.getTabAt(0).getCustomView();
+        ((ImageView)view.findViewById(R.id.icon_tab_options)).setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
+        //pintar deseleccionados
+        View viewTab2 = tabLayout.getTabAt(1).getCustomView();
+        ((ImageView)viewTab2.findViewById(R.id.icon_tab_options)).setColorFilter(getResources().getColor(R.color.colorSombra), PorterDuff.Mode.SRC_IN);
+        View viewTab3 = tabLayout.getTabAt(2).getCustomView();
+        ((ImageView)viewTab3.findViewById(R.id.icon_tab_options)).setColorFilter(getResources().getColor(R.color.colorSombra), PorterDuff.Mode.SRC_IN);
+
+    }
     public void customIconTab(){
         for(int i = 0; i < COUNT_OPTIONS_TOOLBAR;i++){
             View view = getLayoutInflater().from(this).inflate(R.layout.tab_item_selected_toolbar, null, false);
@@ -163,8 +190,12 @@ public class MainActivity extends AppCompatActivity {
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        List<Fragment> fragments;
+
+        public SectionsPagerAdapter(FragmentManager fm,List<Fragment> fragments) {
             super(fm);
+            this.fragments = fragments;
+
         }
 
         @Override
@@ -172,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
 
-            return PlaceholderFragment.newInstance(position + 1);
+            return fragments.get(position);
         }
         @Override
         public int getCount() {
