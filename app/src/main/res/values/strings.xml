@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DokkuApp</string>
+    <string name="app_name">Dokku</string>
     <!-- GCM ID Sender -->
     <string name="gcm_sender_id">471116829754</string>
 
@@ -41,7 +41,7 @@ Por ello, se ha creado este canal de comunicación con la finalidad de impulsar 
     </string>
     <string name="text_terminos_condiciones_checkbox">Aceptar Terminos y condiciones</string>
 
-    <string name="title_activity_main">GreenApp</string>
+    <string name="title_activity_main">Dokku</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Estamos en el fragmento %1$d</string>
 
