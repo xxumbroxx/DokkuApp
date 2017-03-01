@@ -83,6 +83,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             /*YoYo.with(Techniques.Tada)
                    .duration(700)
                     .playOn(findViewById(R.id.input_contrasenia));*/
+            
+
+
             inputContrasenia.requestFocus();
             return false;
         }
