@@ -1,9 +1,7 @@
 package pe.com.gmd.dokkuapp.domain.model;
 
 
-/**
- * Created by jmauricio on 01/06/2016.
- */
+
 public class User  {
 
     private String CodigoUsuario;

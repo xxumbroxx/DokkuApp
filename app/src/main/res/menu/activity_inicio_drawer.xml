@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Como llegar" />
+
+        <item android:title="Metropolitano">
+            <menu>
+                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="Troncal" />
+                <item
+                    android:id="@+id/nav_send"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="Alimentador" />
+            </menu>
+        </item>
+
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Linea 1" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Corredor Azul" />
+
+    </group>
+<group>
+    <item
+        android:id="@+id/nav_manage"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Tarjetas y  tarifas" />
+    <item
+        android:id="@+id/noticias"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Noticias" />
+    <item
+        android:id="@+id/contacto"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Contacto" />
+
+
+</group>
+
+    <group>
+        <item
+            android:id="@+id/configuracio"
+
+            android:title="Configuración" />
+    </group>
+
+    <item android:title="Nosotros">
+        <menu>
+            <item
+                android:id="@+id/Contactanos"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Troncal" />
+
+        </menu>
+    </item>
+</menu>

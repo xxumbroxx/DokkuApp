@@ -16,6 +16,8 @@ import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.viewpagerindicator.CirclePageIndicator;
 
+
+
 import java.util.List;
 
 import butterknife.Bind;
@@ -128,7 +130,7 @@ public class SlideActivity extends BaseActivity implements ViewPager.OnPageChang
     }
 
     private void goToHistoriasActivity() {
-        callActivity(MainActivity.class.getName());
+        callActivity(InicioActivity.class.getName());
         //callActivity(LoginActivity.class.getName());
         finish();
     }
