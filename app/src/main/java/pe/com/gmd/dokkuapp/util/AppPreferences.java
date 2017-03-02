@@ -88,6 +88,7 @@ public class AppPreferences {
 	 * @param defaultValue
      * @return
      */
+
 	public static String getString(Context context, String key, String defaultValue) {
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
 		return settings.getString(key, defaultValue);

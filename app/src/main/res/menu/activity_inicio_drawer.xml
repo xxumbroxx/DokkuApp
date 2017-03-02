@@ -3,27 +3,27 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/principal"
             android:icon="@drawable/ic_menu_camera"
             android:title="Como llegar" />
 
         <item android:title="Metropolitano">
             <menu>
                 <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_menu_send"
+                    android:id="@+id/troncal"
+                    android:icon="@drawable/ic_directions_bus_black_24dp"
                     android:title="Troncal" />
                 <item
-                    android:id="@+id/nav_send"
-                    android:icon="@drawable/ic_menu_send"
+                    android:id="@+id/alimentador"
+                    android:icon="@drawable/ic_directions_bus_black_24dp"
                     android:title="Alimentador" />
             </menu>
         </item>
         <item android:title="Metro de Lima">
             <menu>
                 <item
-                    android:id="@+id/nav_gallery"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:id="@+id/linea_1"
+                    android:icon="@drawable/ic_directions_subway_black_24dp"
                     android:title="Linea 1" />
             </menu>
         </item>
@@ -34,11 +34,11 @@
             <menu>
                 <item
                     android:id="@+id/javier_prado"
-                    android:icon="@drawable/ic_menu_manage"
+                    android:icon="@drawable/ic_directions_bus_black_24dp"
                     android:title="Javier Prado" />
                 <item
                     android:id="@+id/santa_rosa"
-                    android:icon="@drawable/ic_menu_manage"
+                    android:icon="@drawable/ic_directions_bus_black_24dp"
                     android:title="Santa Rosa" />
             </menu>
         </item>
@@ -51,16 +51,16 @@
             android:title="Mas">
             <menu>
                 <item
-                    android:id="@+id/nav_manage"
-                    android:icon="@drawable/ic_menu_manage"
+                    android:id="@+id/tarjetas_tarifas"
+                    android:icon="@drawable/ic_credit_card_black_24dp"
                     android:title="Tarjetas y  tarifas" />
                 <item
                     android:id="@+id/noticias"
-                    android:icon="@drawable/ic_menu_manage"
-                    android:title="Noticias" />
+                    android:icon="@drawable/ic_add_to_queue_black_24dp"
+                     android:title="Noticias" />
                 <item
-                    android:id="@+id/contacto"
-                    android:icon="@drawable/ic_menu_manage"
+                    android:id="@+id/denunciar"
+                    android:icon="@drawable/ic_send_black_24dp"
                     android:title="Denuncia" />
             </menu>
         </item>
@@ -70,17 +70,17 @@
     <group>
         <item
             android:id="@+id/configuracion"
+            android:icon="@drawable/ic_settings_applications_black_24dp"
 
             android:title="Configuración" />
     </group>
 
     <item android:title="Nosotros"
-
         >
         <menu>
             <item
-                android:id="@+id/conntact"
-                android:icon="@drawable/ic_menu_manage"
+                android:id="@+id/contactanos"
+
                 android:title="Contactanos" />
 
         </menu>
