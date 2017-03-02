@@ -11,7 +11,7 @@
             <menu>
                 <item
                     android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_menu_share"
+                    android:icon="@drawable/ic_menu_send"
                     android:title="Troncal" />
                 <item
                     android:id="@+id/nav_send"
@@ -19,47 +19,69 @@
                     android:title="Alimentador" />
             </menu>
         </item>
+        <item android:title="Metro de Lima">
+            <menu>
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="Linea 1" />
+            </menu>
+        </item>
 
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Linea 1" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Corredor Azul" />
+
+            android:title="Corredor Azul">
+            <menu>
+                <item
+                    android:id="@+id/javier_prado"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Javier Prado" />
+                <item
+                    android:id="@+id/santa_rosa"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Santa Rosa" />
+            </menu>
+        </item>
 
     </group>
-<group>
-    <item
-        android:id="@+id/nav_manage"
-        android:icon="@drawable/ic_menu_manage"
-        android:title="Tarjetas y  tarifas" />
-    <item
-        android:id="@+id/noticias"
-        android:icon="@drawable/ic_menu_manage"
-        android:title="Noticias" />
-    <item
-        android:id="@+id/contacto"
-        android:icon="@drawable/ic_menu_manage"
-        android:title="Contacto" />
-
-
-</group>
 
     <group>
         <item
-            android:id="@+id/configuracio"
+
+            android:title="Mas">
+            <menu>
+                <item
+                    android:id="@+id/nav_manage"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Tarjetas y  tarifas" />
+                <item
+                    android:id="@+id/noticias"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Noticias" />
+                <item
+                    android:id="@+id/contacto"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Denuncia" />
+            </menu>
+        </item>
+
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/configuracion"
 
             android:title="Configuración" />
     </group>
 
-    <item android:title="Nosotros">
+    <item android:title="Nosotros"
+
+        >
         <menu>
             <item
-                android:id="@+id/Contactanos"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Troncal" />
+                android:id="@+id/conntact"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Contactanos" />
 
         </menu>
     </item>
