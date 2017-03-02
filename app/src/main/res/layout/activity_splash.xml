@@ -3,71 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
-
+    android:background="@color/colorPrimaryDark"
     android:layout_height="match_parent"
     tools:context="pe.com.gmd.dokkuapp.view.activity.SplashActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
 
-
-        >
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@mipmap/dokku_splash"
-            android:scaleType="centerCrop"/>
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@mipmap/icon_logo_splash"
+            android:id="@+id/imageView"
+            />
     </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
 
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:src="@mipmap/logo_dokku_splash"
-                android:id="@+id/imageView"
-
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
-            android:id="@+id/fullscreen_content_controls"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
-            <TextView
-                android:id="@+id/windowsTvOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:textColor="@android:color/white"
-                android:visibility="visible" />
-
-            <TextView
-                android:id="@+id/windowsTvTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/windowsTvOne"
-                android:textColor="@android:color/white" />
-
-            <TextView
-                android:id="@+id/windowsTvThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/windowsTvTwo"
-                android:textColor="@android:color/white" />
-        </LinearLayout>
-
-
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:background="@mipmap/icon_ciudad_splash"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>
