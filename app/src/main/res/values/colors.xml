@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#009688</color>
-    <color name="colorPrimaryDark">#00796B</color>
-    <color name="colorAccent">#FFFFFF</color>
-    <color name="colorSombra">#5a000000</color>
+    <color name="colorPrimary">#9574CE </color>
+    <color name="colorPrimaryDark">#7F58C3</color>
+    <color name="colorAccent">#9c27b0</color>
+    <color name="colorSombra">#DDD0E5</color>
 
 
     <color name="fondo_slide">#ffffff</color>
