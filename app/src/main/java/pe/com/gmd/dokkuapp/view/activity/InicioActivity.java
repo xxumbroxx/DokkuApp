@@ -3,9 +3,8 @@ package pe.com.gmd.dokkuapp.view.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,16 +12,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import pe.com.gmd.dokkuapp.R;
 
 public class InicioActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+
+    @Bind(R.id.nav_view)
+    NavigationView navView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,6 +51,16 @@ public class InicioActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView = getLayoutInflater().inflate(R.layout.nav_header_inicio, navigationView, false);
+        navigationView.addHeaderView(headerView);
+
+        ImageView imgUsuario= (ImageView) headerView.findViewById(R.id.img_usuario);
+        TextView nombreUsuario= (TextView) headerView.findViewById(R.id.usuario);
+        TextView mailUsuario= (TextView)headerView.findViewById(R.id.mail_usuario);
+        imgUsuario.setOnClickListener(this);
+        mailUsuario.setOnClickListener(this);
+        nombreUsuario.setOnClickListener(this);
     }
 
     @Override
@@ -71,7 +89,7 @@ public class InicioActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.troncal) {
-            startActivity(new Intent(this,DetalleActivity.class));
+            startActivity(new Intent(this, DetalleActivity.class));
             return true;
         }
 
@@ -83,14 +101,14 @@ public class InicioActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        switch (id){
-            case R.id.troncal:{
-                startActivity(new Intent(this,DetalleActivity.class));
+        switch (id) {
+            case R.id.troncal: {
+                startActivity(new Intent(this, DetalleActivity.class));
                 return true;
 
             }
-            case R.id.alimentador:{
-                startActivity(new Intent(this,DetalleActivity.class));
+            case R.id.alimentador: {
+                startActivity(new Intent(this, DetalleActivity.class));
                 return true;
 
             }
@@ -115,5 +133,10 @@ public class InicioActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(this,UsuarioActivity.class));
     }
 }
