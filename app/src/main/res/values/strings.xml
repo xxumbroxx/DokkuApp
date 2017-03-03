@@ -51,4 +51,5 @@ Por ello, se ha creado este canal de comunicación con la finalidad de impulsar 
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
