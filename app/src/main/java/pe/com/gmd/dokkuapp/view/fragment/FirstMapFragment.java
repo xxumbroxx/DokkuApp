@@ -18,12 +18,16 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
 
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import pe.com.gmd.dokkuapp.R;
+import pe.com.gmd.dokkuapp.domain.orm.ESTACION;
+import pe.com.gmd.dokkuapp.service.dao.Repositorio;
+import pe.com.gmd.dokkuapp.service.dao.impl.TIpoRepositoeio;
 
 
 public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
@@ -55,6 +59,10 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
         mapa.getMapAsync(this);
 
         return v;
+    }
+
+    private long String2Long(String s) {
+        return Long.valueOf(s);
     }
 
 
@@ -108,6 +116,28 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
         } else {
 
         }
+
+        pintarPosiciones(0);
+    }
+
+    private void pintarPosiciones(int tag) {
+        map.clear();
+        LatLng punto;
+
+        TIpoRepositoeio tipoRepositorio=new TIpoRepositoeio();
+        List<ESTACION> lista = tipoRepositorio.getForId(this.getActivity(), String2Long("1")).getFk_estaciones();
+
+        int i;
+        for(i=1 ; i<= lista.size();i++) {
+            punto = new LatLng(Double.parseDouble(String.valueOf(lista.get(i).getLatitud())), Double.parseDouble(String.valueOf(lista.get(i).getLongitud())));
+
+        }
+
+//        List<Point> point = pointTrRepositorio.getAllPoints(this.getContext());
+//        Point p;
+//        LatLng punto;
+
+
 
     }
 
