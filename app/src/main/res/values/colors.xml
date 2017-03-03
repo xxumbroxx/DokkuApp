@@ -8,6 +8,7 @@
 
     <color name="titulo">#353535</color>
     <color name="subtitulo">#A5A5A5</color>
+    <color name="subtituloBold">#9574CE</color>
 
     <color name="fondo_slide">#ffffff</color>
     <color name="button_slide">#000000</color>
