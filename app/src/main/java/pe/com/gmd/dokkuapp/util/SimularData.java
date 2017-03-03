@@ -29,8 +29,8 @@ public class SimularData {
         tIpoRepositoeio.insertOrUpdate(context, metropolitano);
         //public ESTACION(Long id, String Nombre, String Direcion, String Descripcion, String Texto, Double Latitud, Double Longitud, Integer Foto, Boolean modulo, Boolean Estado, long tipo_id) {
 
-        ESTACION estacion_naranjal=new ESTACION(String2Long("1"),"NARANJAL","AV. Tupac Amaru Comas","Ultima de lima norte","EST. NARANJAL",1.21212,2.32323,0,true,true,String2Long("1"));
-        ESTACION estacion_izaguirre=new ESTACION(String2Long("2"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. IZAGUIRRE",1.21212,2.32323,0,true,true,String2Long("1"));
+        ESTACION estacion_naranjal=new ESTACION(String2Long("1"),"NARANJAL","AV. Tupac Amaru Comas","Ultima de lima norte","EST. NARANJAL","1.21212","2.32323","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("2"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. IZAGUIRRE","1.21212","2.32323","0",true,true,String2Long("1"));
 
         estacionRepositorio.insertOrUpdate(context,estacion_naranjal);
         estacionRepositorio.insertOrUpdate(context,estacion_izaguirre);

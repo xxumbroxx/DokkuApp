@@ -31,9 +31,9 @@ public class ESTACIONDao extends AbstractDao<ESTACION, Long> {
         public final static Property Direcion = new Property(2, String.class, "Direcion", false, "DIRECION");
         public final static Property Descripcion = new Property(3, String.class, "Descripcion", false, "DESCRIPCION");
         public final static Property Texto = new Property(4, String.class, "Texto", false, "TEXTO");
-        public final static Property Latitud = new Property(5, Double.class, "Latitud", false, "LATITUD");
-        public final static Property Longitud = new Property(6, Double.class, "Longitud", false, "LONGITUD");
-        public final static Property Foto = new Property(7, Integer.class, "Foto", false, "FOTO");
+        public final static Property Latitud = new Property(5, String.class, "Latitud", false, "LATITUD");
+        public final static Property Longitud = new Property(6, String.class, "Longitud", false, "LONGITUD");
+        public final static Property Foto = new Property(7, String.class, "Foto", false, "FOTO");
         public final static Property Modulo = new Property(8, Boolean.class, "modulo", false, "MODULO");
         public final static Property Estado = new Property(9, Boolean.class, "Estado", false, "ESTADO");
         public final static Property Tipo_id = new Property(10, long.class, "tipo_id", false, "TIPO_ID");
@@ -61,9 +61,9 @@ public class ESTACIONDao extends AbstractDao<ESTACION, Long> {
                 "\"DIRECION\" TEXT," + // 2: Direcion
                 "\"DESCRIPCION\" TEXT," + // 3: Descripcion
                 "\"TEXTO\" TEXT," + // 4: Texto
-                "\"LATITUD\" REAL," + // 5: Latitud
-                "\"LONGITUD\" REAL," + // 6: Longitud
-                "\"FOTO\" INTEGER," + // 7: Foto
+                "\"LATITUD\" TEXT," + // 5: Latitud
+                "\"LONGITUD\" TEXT," + // 6: Longitud
+                "\"FOTO\" TEXT," + // 7: Foto
                 "\"MODULO\" INTEGER," + // 8: modulo
                 "\"ESTADO\" INTEGER," + // 9: Estado
                 "\"TIPO_ID\" INTEGER NOT NULL );"); // 10: tipo_id
@@ -105,19 +105,19 @@ public class ESTACIONDao extends AbstractDao<ESTACION, Long> {
             stmt.bindString(5, Texto);
         }
  
-        Double Latitud = entity.getLatitud();
+        String Latitud = entity.getLatitud();
         if (Latitud != null) {
-            stmt.bindDouble(6, Latitud);
+            stmt.bindString(6, Latitud);
         }
  
-        Double Longitud = entity.getLongitud();
+        String Longitud = entity.getLongitud();
         if (Longitud != null) {
-            stmt.bindDouble(7, Longitud);
+            stmt.bindString(7, Longitud);
         }
  
-        Integer Foto = entity.getFoto();
+        String Foto = entity.getFoto();
         if (Foto != null) {
-            stmt.bindLong(8, Foto);
+            stmt.bindString(8, Foto);
         }
  
         Boolean modulo = entity.getModulo();
@@ -153,9 +153,9 @@ public class ESTACIONDao extends AbstractDao<ESTACION, Long> {
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // Direcion
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // Descripcion
             cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // Texto
-            cursor.isNull(offset + 5) ? null : cursor.getDouble(offset + 5), // Latitud
-            cursor.isNull(offset + 6) ? null : cursor.getDouble(offset + 6), // Longitud
-            cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7), // Foto
+            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // Latitud
+            cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // Longitud
+            cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // Foto
             cursor.isNull(offset + 8) ? null : cursor.getShort(offset + 8) != 0, // modulo
             cursor.isNull(offset + 9) ? null : cursor.getShort(offset + 9) != 0, // Estado
             cursor.getLong(offset + 10) // tipo_id
@@ -171,9 +171,9 @@ public class ESTACIONDao extends AbstractDao<ESTACION, Long> {
         entity.setDirecion(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setDescripcion(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
         entity.setTexto(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
-        entity.setLatitud(cursor.isNull(offset + 5) ? null : cursor.getDouble(offset + 5));
-        entity.setLongitud(cursor.isNull(offset + 6) ? null : cursor.getDouble(offset + 6));
-        entity.setFoto(cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7));
+        entity.setLatitud(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
+        entity.setLongitud(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
+        entity.setFoto(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
         entity.setModulo(cursor.isNull(offset + 8) ? null : cursor.getShort(offset + 8) != 0);
         entity.setEstado(cursor.isNull(offset + 9) ? null : cursor.getShort(offset + 9) != 0);
         entity.setTipo_id(cursor.getLong(offset + 10));

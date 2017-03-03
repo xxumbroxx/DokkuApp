@@ -18,9 +18,9 @@ public class ESTACION {
     private String Direcion;
     private String Descripcion;
     private String Texto;
-    private Double Latitud;
-    private Double Longitud;
-    private Integer Foto;
+    private String Latitud;
+    private String Longitud;
+    private String Foto;
     private Boolean modulo;
     private Boolean Estado;
     private long tipo_id;
@@ -43,7 +43,7 @@ public class ESTACION {
         this.id = id;
     }
 
-    public ESTACION(Long id, String Nombre, String Direcion, String Descripcion, String Texto, Double Latitud, Double Longitud, Integer Foto, Boolean modulo, Boolean Estado, long tipo_id) {
+    public ESTACION(Long id, String Nombre, String Direcion, String Descripcion, String Texto, String Latitud, String Longitud, String Foto, Boolean modulo, Boolean Estado, long tipo_id) {
         this.id = id;
         this.Nombre = Nombre;
         this.Direcion = Direcion;
@@ -103,27 +103,27 @@ public class ESTACION {
         this.Texto = Texto;
     }
 
-    public Double getLatitud() {
+    public String getLatitud() {
         return Latitud;
     }
 
-    public void setLatitud(Double Latitud) {
+    public void setLatitud(String Latitud) {
         this.Latitud = Latitud;
     }
 
-    public Double getLongitud() {
+    public String getLongitud() {
         return Longitud;
     }
 
-    public void setLongitud(Double Longitud) {
+    public void setLongitud(String Longitud) {
         this.Longitud = Longitud;
     }
 
-    public Integer getFoto() {
+    public String getFoto() {
         return Foto;
     }
 
-    public void setFoto(Integer Foto) {
+    public void setFoto(String Foto) {
         this.Foto = Foto;
     }
 

@@ -129,7 +129,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
 
         int i;
         for(i=1 ; i<= lista.size();i++) {
-            punto = new LatLng(Double.parseDouble(String.valueOf(lista.get(i).getLatitud())), Double.parseDouble(String.valueOf(lista.get(i).getLongitud())));
+//            punto = new LatLng(Double.parseDouble(String.valueOf(lista.get(i).getLatitud())), Double.parseDouble(String.valueOf(lista.get(i).getLongitud())));
 
         }
 

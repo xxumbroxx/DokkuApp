@@ -11,7 +11,7 @@ public class MyDBGenerator {
 
     public static void main(String[] args) {
         //pe.com.gym.concar.sos
-        Schema schema = new Schema(3, "pe.com.gmd.dokkuapp.domain.orm");
+        Schema schema = new Schema(4, "pe.com.gmd.dokkuapp.domain.orm");
         schema.enableKeepSectionsByDefault();
         //schema.
         addTables(schema);
@@ -140,9 +140,9 @@ customerToOrders.orderAsc(orderDate);
         estacion.addStringProperty("Direcion");
         estacion.addStringProperty("Descripcion");
         estacion.addStringProperty("Texto");
-        estacion.addDoubleProperty("Latitud");
-        estacion.addDoubleProperty("Longitud");
-        estacion.addIntProperty("Foto");
+        estacion.addStringProperty("Latitud");
+        estacion.addStringProperty("Longitud");
+        estacion.addStringProperty("Foto");
         estacion.addBooleanProperty("modulo"); //MODULO DE ATENCION
         estacion.addBooleanProperty("Estado");
         return  estacion;

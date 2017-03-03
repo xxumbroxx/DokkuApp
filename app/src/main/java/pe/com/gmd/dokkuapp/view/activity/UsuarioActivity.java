@@ -16,6 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import pe.com.gmd.dokkuapp.R;
 import pe.com.gmd.dokkuapp.util.AppPreferences;
 import pe.com.gmd.dokkuapp.util.CircleTransform;
@@ -46,21 +47,22 @@ public class UsuarioActivity extends AppCompatActivity {
 
     AlertDialog alert = null;
     Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
         ButterKnife.bind(this);
-        context=this;
+        context = this;
         Profile profileDefault = Profile.getCurrentProfile();
 
-        if (profileDefault != null){
+        if (profileDefault != null) {
             txtUsuario.setText(profileDefault.getName());
 
             Picasso.with(this).load(profileDefault.getProfilePictureUri(100, 100)).transform(new CircleTransform()).into(imgUser);
             AppPreferences preference = AppPreferences.getInstance(this);
             txtMail.setText(preference._EmailLogin());
-            }
+        }
 
     }
 
@@ -87,5 +89,10 @@ public class UsuarioActivity extends AppCompatActivity {
                 });
         alert = builder.create();
         alert.show();
+    }
+
+    @OnClick(R.id.ly_cerrar_session)
+    public void onClick() {
+        AlertClose();
     }
 }
