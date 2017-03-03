@@ -10,9 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import pe.com.gmd.dokkuapp.R;
+import pe.com.gmd.dokkuapp.domain.orm.ESTACION;
+import pe.com.gmd.dokkuapp.service.dao.impl.EstacionRepositorio;
+import pe.com.gmd.dokkuapp.view.adapter.EstacionesAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +36,8 @@ public class InformacionGeneralFragment extends Fragment {
     RecyclerView rv;
     Context context;
 
+
+    List<ESTACION> lista;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -76,11 +83,15 @@ public class InformacionGeneralFragment extends Fragment {
         ButterKnife.bind(this, view);
 
 
+       EstacionRepositorio estacionRepositorio=new EstacionRepositorio();
+       lista= estacionRepositorio.getAll(this.getContext());
+
         context= view.getContext();
 
         rv.setLayoutManager(new LinearLayoutManager(context));
-       // NotificacionesAdapter adapter = new NotificacionesAdapter();
-       // rv.setAdapter(adapter);
+
+        EstacionesAdapter adapter = new EstacionesAdapter(lista);
+        rv.setAdapter(adapter);
         return view;
 
 
