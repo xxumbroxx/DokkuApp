@@ -6,6 +6,9 @@
     <color name="colorSombra">#DDD0E5</color>
 
 
+    <color name="titulo">#353535</color>
+    <color name="subtitulo">#A5A5A5</color>
+
     <color name="fondo_slide">#ffffff</color>
     <color name="button_slide">#000000</color>
     <color name="color_texto_login">#000000</color>
