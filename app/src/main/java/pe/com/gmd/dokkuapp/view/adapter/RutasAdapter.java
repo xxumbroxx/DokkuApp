@@ -52,6 +52,15 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.VHRutas> {
             }
         }
 
+        String tarde = "";
+        String maniana= lista.get(position).getDesdeMA().toString()+":00" +" a "+ lista.get(position).getHastaMA().toString()+":00";
+        if(!lista.get(position).getDesdeTA().equals(0)) {
+            tarde = " / " + lista.get(position).getDesdeTA().toString() + ":00" + " a " + lista.get(position).getHastaTA().toString() + ":00";
+        }
+
+        v.txtFrecuRu.setText("Cada "+lista.get(position).getFrecuencia().toString()+" minutos");
+        v.txtHoraRu.setText(maniana + tarde);
+
 
     }
 
