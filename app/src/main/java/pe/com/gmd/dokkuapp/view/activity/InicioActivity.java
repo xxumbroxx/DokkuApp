@@ -1,5 +1,6 @@
 package pe.com.gmd.dokkuapp.view.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -69,7 +70,8 @@ public class InicioActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.troncal) {
+            startActivity(new Intent(this,DetalleActivity.class));
             return true;
         }
 
@@ -81,7 +83,22 @@ public class InicioActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        switch (id){
+            case R.id.troncal:{
+                startActivity(new Intent(this,DetalleActivity.class));
+                return true;
 
+            }
+            case R.id.alimentador:{
+                startActivity(new Intent(this,DetalleActivity.class));
+                return true;
+
+            }
+        }
+
+        if (id == R.id.troncal) {
+
+        }
         /*if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
@@ -92,7 +109,8 @@ public class InicioActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
-        }*/
+        }
+        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
