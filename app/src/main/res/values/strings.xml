@@ -7,6 +7,8 @@
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
         AIzaSyAyB4v8OY7qswD-DCnJgBLCwwTKY6tA5LU
     </string>
+
+    <string name="facebook_app_id">1247575201978883</string>
     <string name="mensaje_progress_dialog">Cargando</string>
     <string name="slide_txt_boton_omitir">Omitir</string>
     <string name="siguiente">Siguiente</string>

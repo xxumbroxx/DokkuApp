@@ -16,9 +16,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.facebook.Profile;
+import com.squareup.picasso.Picasso;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import pe.com.gmd.dokkuapp.R;
+import pe.com.gmd.dokkuapp.util.AppPreferences;
+import pe.com.gmd.dokkuapp.util.CircleTransform;
 
 public class InicioActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -61,6 +66,17 @@ public class InicioActivity extends AppCompatActivity
         imgUsuario.setOnClickListener(this);
         mailUsuario.setOnClickListener(this);
         nombreUsuario.setOnClickListener(this);
+
+        Profile profileDefault = Profile.getCurrentProfile();
+
+        if (profileDefault != null){
+            nombreUsuario.setText(profileDefault.getName());
+
+            Picasso.with(this).load(profileDefault.getProfilePictureUri(100, 100)).transform(new CircleTransform()).into(imgUsuario);
+            AppPreferences preference = AppPreferences.getInstance(this);
+            mailUsuario.setText(preference._EmailLogin());
+        }
+
     }
 
     @Override

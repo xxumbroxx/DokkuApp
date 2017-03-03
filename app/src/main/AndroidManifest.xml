@@ -3,7 +3,7 @@
     package="pe.com.gmd.dokkuapp">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name=".view.AndroidApplication"
         android:allowBackup="true"
@@ -47,6 +47,16 @@
         </activity>
         <activity android:name=".view.activity.SlideActivity"></activity>
         <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/facebook_app_id" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".view.activity.InicioActivity"
             android:label="@string/title_activity_inicio"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -67,6 +77,8 @@
 
         <activity android:name=".view.activity.UsuarioActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
     </application>
 
 </manifest>
