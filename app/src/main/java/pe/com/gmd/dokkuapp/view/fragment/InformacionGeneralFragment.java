@@ -4,16 +4,20 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import pe.com.gmd.dokkuapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link InformacionGeneralFragment.OnFragmentInteractionListener} interface
+ * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link InformacionGeneralFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -23,6 +27,9 @@ public class InformacionGeneralFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    @Bind(R.id.rv)
+    RecyclerView rv;
+    Context context;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -65,7 +72,18 @@ public class InformacionGeneralFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_informacion_general, container, false);
+        View view = inflater.inflate(R.layout.fragment_informacion_general, container, false);
+        ButterKnife.bind(this, view);
+
+
+        context= view.getContext();
+
+        rv.setLayoutManager(new LinearLayoutManager(context));
+       // NotificacionesAdapter adapter = new NotificacionesAdapter();
+       // rv.setAdapter(adapter);
+        return view;
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -80,6 +98,12 @@ public class InformacionGeneralFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 
     /**
