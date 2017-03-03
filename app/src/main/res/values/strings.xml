@@ -12,11 +12,11 @@
     <string name="siguiente">Siguiente</string>
     <string name="slide_finalizar">Finalizar</string>
     <string name="t1">Control Remoto</string>
-    <string name="d1">Controla tus cultivos a distancia a través de los distintos dispositivos disponibles</string>
+    <string name="d1">Observa el recorrido de las distintas rutas troncales, los horarios y estaciones correspondientes a cada servicio del METROPOLITANO </string>
     <string name="t2">Mantente Informado</string>
-    <string name="d2">Podrás observar las condiciones climáticas y como éstas afectan a los cultivos</string>
+    <string name="d2">Ademas permite integrar el recorrido de la Línea 1 del Metro de Lima, observando las paradas correspondientes a cada servicio</string>
     <string name="t3">En cualquier momento</string>
-    <string name="d3">Podrás obtener información constante y actualizada de tus cultivos</string>
+    <string name="d3">Integra el servicio de los corredores complementarios, indicando el recorrido a lo largo de los distintos distritos de Lima</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
 
     <string name="slide_one_title">On Boarding</string>
