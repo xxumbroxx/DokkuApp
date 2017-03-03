@@ -21,13 +21,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="32dp"
-                android:src="@drawable/ic_photo_camera_black_24dp"/>
+                android:src="@drawable/ic_photo_camera_black_24dp"
+                android:id="@+id/btn_cambiar_foto" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="32dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/ic_create_black_24dp"/>
+                android:src="@drawable/ic_create_black_24dp"
+                android:id="@+id/btn_edir_user" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:gravity="center"
@@ -59,7 +61,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_height="wrap_content"
                     android:text="Titular"
-                    android:id="@+id/txt_usuario_desc" />
+                    android:id="@+id/txt_mail" />
 
             </LinearLayout>
         </RelativeLayout>
@@ -85,7 +87,7 @@
                 android:gravity="center"
                 android:layout_margin="8dp"
                 android:layout_height="wrap_content"
-                >
+                android:id="@+id/ly_notificaciones">
                 <TextView
                     android:layout_width="match_parent"
                     android:theme="@style/TextoUsuario"
@@ -116,7 +118,7 @@
 
                 android:layout_margin="8dp"
                 android:layout_height="wrap_content"
-                >
+                android:id="@+id/ly_idioma">
                 <TextView
                     android:layout_width="wrap_content"
                     android:theme="@style/TextoUsuario"
@@ -148,7 +150,7 @@
 
                 android:layout_margin="8dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/ly_comunicate_vhilectra">
+                android:id="@+id/ly_ubicaciones">
                 <TextView
                     android:layout_width="wrap_content"
                     android:theme="@style/TextoUsuario"
@@ -180,7 +182,7 @@
 
                 android:layout_margin="8dp"
                 android:layout_height="wrap_content"
-               >
+                android:id="@+id/ly_denuncias">
                 <TextView
                     android:layout_width="wrap_content"
                     android:theme="@style/TextoUsuario"

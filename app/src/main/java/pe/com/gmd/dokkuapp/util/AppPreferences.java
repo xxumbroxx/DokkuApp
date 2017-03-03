@@ -19,6 +19,8 @@ public class AppPreferences {
 	public static final String BACKFROMBACKGROUND = "frombackground";
 	public static final String PREF_SOCKET_TIMEOUT = "SocketTimeout";
 	public static final String FLAG_ONBOARDING = "flag_onboarding";
+	public static final String USER_FB_TOKEN ="usuario_fb_to" ;
+	public static final String USER_MAIL ="usuario_mail" ;
 
 	public static AppPreferences appPreferences;
 	public Context context;
@@ -45,10 +47,21 @@ public class AppPreferences {
 		boolean booIsLogged = sharedPreferences.getBoolean(PREF_ISUSERLOGGED, false);
 		return booIsLogged;
 	}
-	
+
+
 	public int _loadUserId(){
 		int intUserId = sharedPreferences.getInt(PREF_USERID, -1);
 		return intUserId;
+	}
+
+	public String _EmailLogin(){
+		String mail = sharedPreferences.getString(USER_MAIL, null);
+		return mail;
+	}
+
+	public String token(){
+		String token = sharedPreferences.getString(USER_FB_TOKEN, null);
+		return token;
 	}
 
 	public int _loadSocketTimeout(){
@@ -89,65 +102,6 @@ public class AppPreferences {
      * @return
      */
 
-	public static String getString(Context context, String key, String defaultValue) {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-		return settings.getString(key, defaultValue);
-	}
-
-	public static void setString(Context context, String key, String value) {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-		settings.edit().putString(key, value).apply();
-	}
-
-	public static boolean getBoolean(Context context, String key, boolean defaultValue) {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-		return settings.getBoolean(key, defaultValue);
-	}
-
-	public static boolean hasKey(Context context, String key) {
-		return PreferenceManager.getDefaultSharedPreferences(context).contains(key);
-	}
-
-	public static void setBoolean(Context context, String key, boolean value) {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-		settings.edit().putBoolean(key, value).apply();
-	}
-
-	public static void setInt(Context context, String key, int value) {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-		settings.edit().putInt(key, value).apply();
-	}
-
-	public static int getInt(Context context, String key, int defaultValue) {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-		return settings.getInt(key, defaultValue);
-	}
-
-	public static void setFloat(Context context, String key, float value) {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-		settings.edit().putFloat(key, value).apply();
-	}
-
-	public static float getFloat(Context context, String key, float defaultValue) {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-		return settings.getFloat(key, defaultValue);
-	}
-
-	public static void setLong(Context context, String key, long value) {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-		settings.edit().putLong(key, value).apply();
-	}
-
-	public static long getLong(Context context, String key, long defaultValue) {
-		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-		return settings.getLong(key, defaultValue);
-	}
-
-	public static void clear(Context context, SharedPreferences p) {
-		SharedPreferences.Editor editor = p.edit();
-		editor.clear();
-		editor.apply();
-	}
 
 
 

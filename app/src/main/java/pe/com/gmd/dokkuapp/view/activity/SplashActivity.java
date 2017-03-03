@@ -9,10 +9,12 @@ import android.view.Display;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import java.security.Principal;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import pe.com.gmd.dokkuapp.R;
+import pe.com.gmd.dokkuapp.util.AppPreferences;
 
 public class SplashActivity extends AppCompatActivity {
     private TimerTask splash_task_parametric;
@@ -69,7 +71,13 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void goToLogin(){
-        Intent i = new Intent(SplashActivity.this , LoginActivity.class);
+        Intent i;
+        if(AppPreferences.getInstance(this).token()==null){
+           i = new Intent(SplashActivity.this , LoginActivity.class);
+        }else{
+            i = new Intent(SplashActivity.this , InicioActivity.class);
+        }
+
         startActivity(i);
         finish();
     }
