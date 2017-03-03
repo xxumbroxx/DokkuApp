@@ -51,10 +51,6 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
         View v = inflater.inflate(R.layout.fragment_home__map, container, false);
         ButterKnife.bind(this, v);
 
-
-
-
-
         mapa.onCreate(savedInstanceState);
         mapa.getMapAsync(this);
 
