@@ -37,7 +37,7 @@ public class EstacionesAdapter extends RecyclerView.Adapter<EstacionesAdapter.VH
     @Override
     public void onBindViewHolder(VHEstaciones v, int position) {
             v.txtTitulo.setText(lista.get(position).getNombre());
-             v.txtDireccion.setText(lista.get(position).getDirecion());
+            v.txtDireccion.setText(lista.get(position).getDirecion());
     }
 
 
