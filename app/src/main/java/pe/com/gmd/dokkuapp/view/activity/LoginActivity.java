@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.util.AsyncListUtil;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.view.WindowManager;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import pe.com.gmd.dokkuapp.R;
+import pe.com.gmd.dokkuapp.util.SimularData;
 
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -39,6 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         context=this;
         ui();
         btnIngreso.setOnClickListener(this);
+
     }
 
     private void ui() {
@@ -47,7 +50,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnIngreso=(AppCompatButton)findViewById(R.id.btn_ingreso);
     }
 
-
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        SimularData simularData=new SimularData();
+        simularData.simular(this);
+    }
 
     @Override
     protected void onStart() {

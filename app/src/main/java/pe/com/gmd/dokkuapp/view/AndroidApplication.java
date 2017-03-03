@@ -3,6 +3,7 @@ package pe.com.gmd.dokkuapp.view;
 import android.app.Application;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.multidex.MultiDex;
 
 
@@ -10,6 +11,8 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import pe.com.gmd.dokkuapp.R;
+import pe.com.gmd.dokkuapp.domain.orm.DaoMaster;
+import pe.com.gmd.dokkuapp.domain.orm.DaoSession;
 import pe.com.gmd.dokkuapp.domain.ro.RetrofitService;
 import pe.com.gmd.dokkuapp.util.Constants;
 
@@ -26,12 +29,14 @@ public class AndroidApplication extends Application{
     private int notificationsCount = 0;
     private ArrayList<String> notificationList = new ArrayList<>();
     private NotificationManager notificationManager;
-
+    public DaoSession daoSession;
     @Override
     public void onCreate() {
         super.onCreate();
         MultiDex.install(this);
+        setupDatabase();
         sApplication = this;
+
         //ViewTarget.setTagId(R.id.glide_tag);
       /*
         RealmConfiguration realmConfiguration = new RealmConfiguration.Builder()
@@ -83,5 +88,22 @@ public class AndroidApplication extends Application{
         return notificationManager;
     }
     /** GCM Global Methods **/
+    private void setupDatabase() {
+        DaoMaster.OpenHelper helper= new DaoMaster.DevOpenHelper(this,"docku-db",null);
+        SQLiteDatabase DB=helper.getWritableDatabase();
+        DaoMaster daoMaster= new DaoMaster(DB);
+        daoSession=daoMaster.newSession();
+/*
+          daoSession.getUserDao();
+        daoSession.getAmbienteDao();
+         daoSession.getElectrodomesticoDao();
+        daoSession.getLuminariaDao();
+*/
+
+
+    }
+    public DaoSession getDaoSession() {
+        return daoSession;
+    }
 
 }

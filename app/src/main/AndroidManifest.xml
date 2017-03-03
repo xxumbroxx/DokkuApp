@@ -9,7 +9,7 @@
         android:icon="@mipmap/icon_logo_app"
         android:label="@string/app_name"
         android:supportsRtl="true"
-
+        android:name=".view.AndroidApplication"
         android:hardwareAccelerated="true"
 
         android:largeHeap="true"
