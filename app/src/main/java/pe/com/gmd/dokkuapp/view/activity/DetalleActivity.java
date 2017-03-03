@@ -20,6 +20,7 @@ import butterknife.ButterKnife;
 import pe.com.gmd.dokkuapp.R;
 import pe.com.gmd.dokkuapp.view.fragment.FirstMapFragment;
 import pe.com.gmd.dokkuapp.view.fragment.InformacionGeneralFragment;
+import pe.com.gmd.dokkuapp.view.fragment.RutasFragment;
 
 public class DetalleActivity extends AppCompatActivity {
 
@@ -72,7 +73,7 @@ public class DetalleActivity extends AppCompatActivity {
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(FirstMapFragment.newInstance(), "MAPA");
         adapter.addFragment(InformacionGeneralFragment.newInstance("S", ""), "PARADEROS");
-        adapter.addFragment(InformacionGeneralFragment.newInstance("S", ""), "RUTAS");
+        adapter.addFragment(RutasFragment.newInstance("S", ""), "RUTAS");
 
         viewPager.setAdapter(adapter);
 

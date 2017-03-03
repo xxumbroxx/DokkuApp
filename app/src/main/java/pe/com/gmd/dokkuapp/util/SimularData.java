@@ -5,8 +5,10 @@ import android.util.Log;
 
 import pe.com.gmd.dokkuapp.R;
 import pe.com.gmd.dokkuapp.domain.orm.ESTACION;
+import pe.com.gmd.dokkuapp.domain.orm.RUTA;
 import pe.com.gmd.dokkuapp.domain.orm.TIPO;
 import pe.com.gmd.dokkuapp.service.dao.impl.EstacionRepositorio;
+import pe.com.gmd.dokkuapp.service.dao.impl.RutaRepositorio;
 import pe.com.gmd.dokkuapp.service.dao.impl.TIpoRepositoeio;
 
 /**
@@ -21,6 +23,7 @@ public class SimularData {
 
         EstacionRepositorio estacionRepositorio=new EstacionRepositorio();estacionRepositorio.clear(context);
 
+        RutaRepositorio  rutaRepositorio=new RutaRepositorio();
 
         TIPO metropolitano=new TIPO(String2Long("1"),"","METROPOLITANO","#33333","METROPOLITANO","METROPOLITANO","TARJETA");
         tIpoRepositoeio.insertOrUpdate(context, metropolitano);
@@ -37,6 +40,26 @@ public class SimularData {
 
         TIPO linea1=new TIPO(String2Long("2"),"","LINEA 1","#33333","LINEA 1","LINEA 1","TARJETA");
         tIpoRepositoeio.insertOrUpdate(context, linea1);
+
+
+
+
+
+
+        //////////////////////rutas  //XXXXX00  //XXXXXXX
+//(Long id, String Nombre, String Direccion, String Origen, String Destino, String Texto, String Dias, Integer DesdeMA, Integer HastaMA, Integer DesdeTA, Integer HastaTA, Integer Frecuencia, Boolean TiempoAproximado, Boolean Estado, long tipo_id) {
+
+        RUTA regularA=new RUTA(String2Long("1"),"REGULAR A","A","NARANJAL","MATELLINI","Todas las estaciones","XXX00XX",6,12,12,11,30,true,true,String2Long("1"));
+        RUTA regularB=new RUTA(String2Long("2"),"REGULAR B","B","NARANJAL","MATELLINI","Todas las estaciones","XXXXXXX",6,12,1,11,30,true,true,String2Long("1"));
+        RUTA regularC=new RUTA(String2Long("3"),"REGULAR C","C","RAMON CASTILLA","MATELLINI","Todas las estaciones","XXXXXXX",6,23,0,0,30,true,true,String2Long("1"));
+        RUTA regularD=new RUTA(String2Long("4"),"REGULAR D","D","NARANJAL","MATELLINI","Todas las estaciones","XXXXX00",6,9,0,0,30,true,true,String2Long("1"));
+        RUTA superExpresoNorte=new RUTA(String2Long("5"),"SUPER EXPRESO NORTE","SXN","NARANJAL","CENTRAL","Tiempo maximo 20 min.","XXXXX00",6,9,0,0
+                ,30,true,true,String2Long("1"));
+        rutaRepositorio.insertOrUpdate(context,regularA);
+        rutaRepositorio.insertOrUpdate(context,regularB);
+        rutaRepositorio.insertOrUpdate(context,regularC);
+        rutaRepositorio.insertOrUpdate(context,regularD);
+        rutaRepositorio.insertOrUpdate(context,superExpresoNorte);
 
 
         return true;

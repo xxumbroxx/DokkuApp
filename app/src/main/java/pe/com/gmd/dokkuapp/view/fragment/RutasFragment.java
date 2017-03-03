@@ -15,32 +15,32 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import pe.com.gmd.dokkuapp.R;
-import pe.com.gmd.dokkuapp.domain.orm.ESTACION;
-import pe.com.gmd.dokkuapp.service.dao.impl.EstacionRepositorio;
-import pe.com.gmd.dokkuapp.view.adapter.EstacionesAdapter;
+import pe.com.gmd.dokkuapp.domain.orm.RUTA;
+import pe.com.gmd.dokkuapp.service.dao.impl.RutaRepositorio;
+import pe.com.gmd.dokkuapp.view.adapter.RutasAdapter;
 
+public class RutasFragment extends Fragment {
 
-public class InformacionGeneralFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    @Bind(R.id.rv)
-    RecyclerView rv;
-    Context context;
-
-
-    List<ESTACION> lista;
     private String mParam1;
     private String mParam2;
 
+    @Bind(R.id.rvRutas)
+    RecyclerView rvRutas;
+    Context context;
+
+    List<RUTA> lista;
+
     private OnFragmentInteractionListener mListener;
 
-    public InformacionGeneralFragment() {
+    public RutasFragment() {
         // Required empty public constructor
     }
 
 
-    public static InformacionGeneralFragment newInstance(String param1, String param2) {
-        InformacionGeneralFragment fragment = new InformacionGeneralFragment();
+    public static RutasFragment newInstance(String param1, String param2) {
+        RutasFragment fragment = new RutasFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,23 +61,19 @@ public class InformacionGeneralFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_informacion_general, container, false);
+        View view=  inflater.inflate(R.layout.fragment_rutas, container, false);
         ButterKnife.bind(this, view);
 
+        RutaRepositorio rutaRepositorio = new RutaRepositorio();
+        lista = rutaRepositorio.getAll(this.getContext());
+        context = view.getContext();
+        rvRutas.setLayoutManager(new LinearLayoutManager(context));
 
-       EstacionRepositorio estacionRepositorio=new EstacionRepositorio();
-       lista= estacionRepositorio.getAll(this.getContext());
-
-        context= view.getContext();
-
-        rv.setLayoutManager(new LinearLayoutManager(context));
-
-        EstacionesAdapter adapter = new EstacionesAdapter(lista);
-        rv.setAdapter(adapter);
-        return view;
-
-
+        RutasAdapter adapter = new RutasAdapter(lista);
+        rvRutas.setAdapter(adapter);
+        return  view;
     }
+
 
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -99,6 +95,7 @@ public class InformacionGeneralFragment extends Fragment {
     }
 
     public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }
