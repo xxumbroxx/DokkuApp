@@ -1,6 +1,7 @@
 package pe.com.gmd.dokkuapp.view.adapter;
 
 import android.content.Context;
+import android.media.Image;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,10 +36,10 @@ public class AdapterSlide extends PagerAdapter {
         ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.slide, collection, false);
 
 
-        TextView textoTitulo= (TextView) layout.findViewById(R.id.title_slide);
+        ImageView textoTitulo= (ImageView) layout.findViewById(R.id.title_slide);
         TextView textoDesc= (TextView) layout.findViewById(R.id.descripcion_slide);
         ImageView imgView= (ImageView) layout.findViewById(R.id.img_slide);
-        textoTitulo.setText(slideActual.getTitulo());
+        textoTitulo.setImageResource(slideActual.getTitulo());
         textoDesc.setText(slideActual.getDescripcion());
         imgView.setImageResource(slideActual.getImagen());
 
