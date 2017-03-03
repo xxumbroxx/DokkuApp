@@ -38,12 +38,12 @@
                         android:textSize="23sp"
                         android:textColor="@color/titulo"
                         android:text="ESTACIÓN NARANJAL"
-                        android:id="@+id/textView2" />
+                        android:id="@+id/txt_titulo" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
+                        android:id="@+id/txt_direccion"
                         android:textSize="15sp"
                         android:textColor="@color/subtitulo"
                         android:text="Av. Túpac Amaru con Av. Chinchaysuyo"
@@ -64,6 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_tarjeta"
+                    android:id="@+id/recargar"
                     android:layout_marginRight="20dp"
                     />
                 <ImageView
@@ -76,6 +77,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:textSize="15sp"
+                    android:id="@+id/hora"
                     android:layout_margin="8dp"
                     android:textColor="@color/subtitulo"
                     android:text="8:00 - 23:00"
