@@ -69,7 +69,7 @@ public class SimularData {
         ESTACION estacion_teran=new ESTACION(String2Long("34"),"FERNANDO TERAN","AV. PASEO DE LA REPUBLICA","Av. COSAC I","EST. TERAN","-12.168335","-77.018792","https://www.google.com.pe/maps/place/Estaci%C3%B3n+Teran/@-12.1683139,-77.0187709,3a,75y,90t/data=!3m8!1e2!3m6!1shttp:%2F%2Flh5.ggpht.com%2Fa21vDUGfS3sO3JmKJtptC7uYWVWXcuvTrXblTWGuz99H3h_Q5GG1vEOZR6oeoaxKxJFwZJUCq45mGVsyRVf5!2e7!3e27!6s%2F%2Flh3.googleusercontent.com%2Fproxy%2FIU1eJ4Qyu28FYkA9m-491tLtY0_LlcjDXApYmc31CDmWfPy9ZcYalJZ890_T52m8HUsfM9V4So3O1sqjMqUgSwOzwxLSksbl-vZNJ0AmzZZhZWPVcf2QyUhxu7bQVWBXnLhk7n2YaASUCLLt4BS-27ej-VbSvw%3Dw203-h152!7i512!8i384!4m5!3m4!1s0x9105b7847cebc927:0x89fbd448e7606cfe!8m2!3d-12.1683253!4d-77.018795!6m1!1e1",true,true,String2Long("1"));
         ESTACION estacion_rosario_de_villa=new ESTACION(String2Long("35"),"ROSARIO DE VILLA","Paseo De La Republica",", Distrito de Lima 15064","EST. ROSARIO DE VILLA","-12.173060", "-77.015089","http://img.uterodemarita.com.s3.amazonaws.com/wp-content/uploads/2014/08/park-and-ride.png",true,true,String2Long("1"));
         ESTACION estacion_matellini=new ESTACION(String2Long("36"),"MATELLINI","AV. PASEO DE LA REPUBLICA","Av. PROL ARIOSTO MATELLINI","EST. CARLOS IZAGUIRRE","-12.179332", "-77.009622","https://lh4.googleusercontent.com/proxy/Q0hqyjtCszgHxaLbfqvDt_lC00kCxbVhssbv0k5EL6Ev6-oMtSayQnXqs8YrhSimN2gmuoJoy96RvNtCiywa8pjhGi7o4safO4UEn2B7LDFRkn9Fbd3QVOk00bQwbBk6NeRMOK5Y6N3me7_n0xxntIarFYW4Wg=w408-h277",true,true,String2Long("1"));
-        ESTACION estacion_explotacion=new ESTACION(String2Long("37"),"EXPLOTACION","AV. NO HAY VIDA","TODO ES AMANECIDA","EST. ESCLAVITUD","-12.048514", "-77.031127","http://www.tnccontratistas.pe/web_anterior/wp-content/uploads/2014/04/TNC_Contratistas_Oficinas-GMD-2.jpg",true,true,String2Long("1"));
+        ESTACION estacion_explotacion=new ESTACION(String2Long("37"),"EXPLOTACION","AV. NO HAY VIDA","TODO ES AMANECIDA","EST. ESCLAVITUD","-12.048514", "-77.031127","",true,true,String2Long("1"));
        //ESTACION estacion_izaguirre=new ESTACION(String2Long("38"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
        //ESTACION estacion_izaguirre=new ESTACION(String2Long("39"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
        //ESTACION estacion_izaguirre=new ESTACION(String2Long("40"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
@@ -117,6 +117,43 @@ public class SimularData {
         TIPO linea1=new TIPO(String2Long("2"),"","LINEA 1","#33333","LINEA 1","LINEA 1","TARJETA");
         tIpoRepositoeio.insertOrUpdate(context, linea1);
 
+        ESTACION estacion_bayobar=new ESTACION(String2Long("1"),"BAYOBAR","AV. WISSE","AV. HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959787", "-76.987580","https://lh4.googleusercontent.com/proxy/6MgLvb9NN4MGUBUAaCb_YO87NDd0N6g60enC_QjqGapxOWbGuSJepuU2jIzD14DRCIviYAvDtx1jUmapdNFPRByWAf5X8_W_TnqjnbnSTq0AnhOwA7ddkdiwtwNlqIu2wKPckJTfgj6MzV7N5U7Sn0isRL90H5I=w408-h305",true,true,String2Long("2"));
+        ESTACION estacion_santa_rosa=new ESTACION(String2Long("2"),"SANTA ROSA","AV. WISSE","AV. SANTA ROSA","EST. SANTA ROSA","-11.968173", "-76.993486","https://lh5.googleusercontent.com/-41vfRKj-RsM/WGKXuuy5IoI/AAAAAAAAACY/Zs1LW8ozWMoaPVzUT6M1apXa4q3bMeeAgCLIB/s408-k-no/",true,true,String2Long("2"));
+        ESTACION estacion_san_martin=new ESTACION(String2Long("3"),"SAN MARTIN","AV. WISSE","AV. CANTO REY","EST. SAN MARTIN","-11.974657", "-76.999885","https://lh4.googleusercontent.com/proxy/l2fV4a9F3yKDzoDgStlvS964CRoFjAlA-W__3qLGk-9sjdsSO_TE1F_nzbc5ZTDeX8AFB3SGYIwosInHdTmws7HIDmj2YdcEoC2oH8rhkyML39DMWT51m6s8ZqFS8gm2voDp8Fi6vL-84Tx3PUzqNyFL2utGcCg=w408-h728",true,true,String2Long("2"));
+        ESTACION estacion_san_carlos=new ESTACION(String2Long("4"),"SAN CARLOS","AV. PROCERES DE LA INDEPENDENCIA","AV. EL SOL","EST. SAN CARLOS","-11.984846", "-77.006723","https://lh6.googleusercontent.com/proxy/hzygwnlIWiXDdKR4SeJwxx0yv3knbIBvMs_dIzkYdeoR-1rxJGiCCa7PejIb63xGS12R0UuGI_6_TfpOEcYYc7ML3i9Os6OVmlt1ry0gIFlAxRj982NbxA-jyY0iuw_9fuEURRL5tbnpcN0zbTHaaoeWRBDc2PQ=w408-h244",true,true,String2Long("2"));
+        ESTACION estacion_los_postes=new ESTACION(String2Long("5"),"LOS POSTES","AV. PROCERES DE LA INDEPENDENCIA","AV. LOS POSTES OESTE","EST. LOS POSTES","-11.996285", "-77.009927","https://lh3.googleusercontent.com/proxy/cQUcMHJputuquIJyllwPMf86x4A355ZJsXGcP_l1j3cy5uw13AQvPx84NoLWxZJqyZd5nQuE_ShMvpdmnKgR0fXPUoVlGIbkO4kwA9mDLGkPsjP4d3VzEFMDHklOx8tzYkjV96CJfYTf44ubg9iX4g-bbYpzWkM=w408-h305",true,true,String2Long("2"));
+        ESTACION estacion_los_jardines=new ESTACION(String2Long("6"),"LOS JARDINES","AV. PROCERES DE LA INDEPENDENCIA","AV. LOS JARDINES OESTE","EST. LOS JARDINES","-12.006926", "-77.005382","https://lh4.googleusercontent.com/-aGYcLr9lLfk/WCDDaH3dtdI/AAAAAAAABNw/8hoM5XWqp0Y5vvj5htHj680E2piiDIrBgCLIB/s408-k-no/",true,true,String2Long("2"));
+     /*   ESTACION estacion_bayobar=new ESTACION(String2Long("7"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("8"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("9"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("10"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("11"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("12"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("13"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("14"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("15"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("16"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("17"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("18"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("19"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("20"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("21"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("22"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("23"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+*/
+
+
+
+        estacionRepositorio.insertOrUpdate(context,estacion_bayobar);
+        estacionRepositorio.insertOrUpdate(context,estacion_santa_rosa);
+        estacionRepositorio.insertOrUpdate(context,estacion_san_martin);
+        estacionRepositorio.insertOrUpdate(context,estacion_san_carlos);
+        estacionRepositorio.insertOrUpdate(context,estacion_los_postes);
+        estacionRepositorio.insertOrUpdate(context,estacion_los_jardines);
+
+
+
+
 
 
 
@@ -129,8 +166,7 @@ public class SimularData {
         RUTA regularB=new RUTA(String2Long("2"),"REGULAR B","B","NARANJAL","MATELLINI","Todas las estaciones","XXXXXXX",9,23,1,0,0,true,true,String2Long("1"));
         RUTA regularC=new RUTA(String2Long("3"),"REGULAR C","C","RAMON CASTILLA","MATELLINI","Todas las estaciones","XXXXXXX",6,23,0,0,30,true,true,String2Long("1"));
         RUTA regularD=new RUTA(String2Long("4"),"REGULAR D","D","NARANJAL","MATELLINI","Todas las estaciones","XXXXX00",6,9,0,0,30,true,true,String2Long("1"));
-        RUTA superExpresoNorte=new RUTA(String2Long("5"),"SUPER EXPRESO NORTE","SXN","NARANJAL","CENTRAL","Tiempo maximo 20 min.","XXXXX00",6,9,17,21
-                ,30,true,true,String2Long("1"));
+        RUTA superExpresoNorte=new RUTA(String2Long("5"),"SUPER EXPRESO NORTE","SXN","NARANJAL","CENTRAL","Tiempo maximo 20 min.","XXXXX00",6,9,17,21,30,true,true,String2Long("1"));
         rutaRepositorio.insertOrUpdate(context,regularA);
         rutaRepositorio.insertOrUpdate(context,regularB);
         rutaRepositorio.insertOrUpdate(context,regularC);
