@@ -16,11 +16,6 @@ import pe.com.gmd.dokkuapp.domain.orm.DaoSession;
 import pe.com.gmd.dokkuapp.domain.ro.RetrofitService;
 import pe.com.gmd.dokkuapp.util.Constants;
 
-
-/**
- * Created by jmauriciog on 01/06/16.
- * Clase principal de la app
- */
 public class AndroidApplication extends Application{
 
     private static AndroidApplication sApplication;
