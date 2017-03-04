@@ -5,7 +5,7 @@
 
     <!-- Google Maps Key -->
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
-        AIzaSyAyB4v8OY7qswD-DCnJgBLCwwTKY6tA5LU
+        AIzaSyBuD9teK9tFwp9l7VoQwVcMO7gQd0q3r3g
     </string>
 
     <string name="facebook_app_id">1247575201978883</string>
@@ -144,4 +144,12 @@ Por ello, se ha creado este canal de comunicación con la finalidad de impulsar 
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+
+    <string name="txt_mapaenviarubicacion_aviso">Aviso!</string>
+    <string name="txt_mapaenviarubicacion_aviso_contenido">Para acceder a esta opción debes tener los permisos de Ubicación activado.</string>
+    <string name="txt_mapaenviarubicacion_aviso_contenido_gps">Para acceder a esta opción debes tener el GPS activado.</string>
+    <string name="txt_mapaenviarubicacion_aviso_boton">Aceptar</string>
+
+
+    <string name="button_text_howtoGet">Cómo llegar</string>
 </resources>

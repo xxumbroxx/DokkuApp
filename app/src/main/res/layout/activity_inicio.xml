@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:background="@color/accent"
     tools:openDrawer="start">
 
     <include
@@ -19,7 +19,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-
+        android:visibility="visible"
+        app:headerLayout="@layout/nav_header_inicio"
         app:menu="@menu/activity_inicio_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

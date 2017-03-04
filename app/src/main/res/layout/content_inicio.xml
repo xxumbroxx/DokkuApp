@@ -13,4 +13,10 @@
     tools:context="pe.com.gmd.dokkuapp.view.activity.InicioActivity"
     tools:showIn="@layout/app_bar_inicio">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/flayContainer">
+    </FrameLayout>
+
 </RelativeLayout>

@@ -33,4 +33,10 @@
     <color name="divider">#BDBDBD</color>
     <color name="separacion">#b7b7b7</color>
 
+
+    <color name="toolbarTransparent">#00ffffff</color>
+
+
+    <color name="ripple_button_verificar">#f2e1ecf6</color>
+    <color name="btn_verificar">#0092d3</color>
 </resources>
