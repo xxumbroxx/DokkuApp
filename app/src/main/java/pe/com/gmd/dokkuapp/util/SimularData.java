@@ -117,6 +117,43 @@ public class SimularData {
         TIPO linea1=new TIPO(String2Long("2"),"","LINEA 1","#33333","LINEA 1","LINEA 1","TARJETA");
         tIpoRepositoeio.insertOrUpdate(context, linea1);
 
+        ESTACION estacion_bayobar=new ESTACION(String2Long("1"),"BAYOBAR","AV. WISSE","AV. HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959787", "-76.987580","https://lh4.googleusercontent.com/proxy/6MgLvb9NN4MGUBUAaCb_YO87NDd0N6g60enC_QjqGapxOWbGuSJepuU2jIzD14DRCIviYAvDtx1jUmapdNFPRByWAf5X8_W_TnqjnbnSTq0AnhOwA7ddkdiwtwNlqIu2wKPckJTfgj6MzV7N5U7Sn0isRL90H5I=w408-h305",true,true,String2Long("2"));
+        ESTACION estacion_santa_rosa=new ESTACION(String2Long("2"),"SANTA ROSA","AV. WISSE","AV. SANTA ROSA","EST. SANTA ROSA","-11.968173", "-76.993486","https://lh5.googleusercontent.com/-41vfRKj-RsM/WGKXuuy5IoI/AAAAAAAAACY/Zs1LW8ozWMoaPVzUT6M1apXa4q3bMeeAgCLIB/s408-k-no/",true,true,String2Long("2"));
+        ESTACION estacion_san_martin=new ESTACION(String2Long("3"),"SAN MARTIN","AV. WISSE","AV. CANTO REY","EST. SAN MARTIN","-11.974657", "-76.999885","https://lh4.googleusercontent.com/proxy/l2fV4a9F3yKDzoDgStlvS964CRoFjAlA-W__3qLGk-9sjdsSO_TE1F_nzbc5ZTDeX8AFB3SGYIwosInHdTmws7HIDmj2YdcEoC2oH8rhkyML39DMWT51m6s8ZqFS8gm2voDp8Fi6vL-84Tx3PUzqNyFL2utGcCg=w408-h728",true,true,String2Long("2"));
+        ESTACION estacion_san_carlos=new ESTACION(String2Long("4"),"SAN CARLOS","AV. PROCERES DE LA INDEPENDENCIA","AV. EL SOL","EST. SAN CARLOS","-11.984846", "-77.006723","https://lh6.googleusercontent.com/proxy/hzygwnlIWiXDdKR4SeJwxx0yv3knbIBvMs_dIzkYdeoR-1rxJGiCCa7PejIb63xGS12R0UuGI_6_TfpOEcYYc7ML3i9Os6OVmlt1ry0gIFlAxRj982NbxA-jyY0iuw_9fuEURRL5tbnpcN0zbTHaaoeWRBDc2PQ=w408-h244",true,true,String2Long("2"));
+        ESTACION estacion_los_postes=new ESTACION(String2Long("5"),"LOS POSTES","AV. PROCERES DE LA INDEPENDENCIA","AV. LOS POSTES OESTE","EST. LOS POSTES","-11.996285", "-77.009927","https://lh3.googleusercontent.com/proxy/cQUcMHJputuquIJyllwPMf86x4A355ZJsXGcP_l1j3cy5uw13AQvPx84NoLWxZJqyZd5nQuE_ShMvpdmnKgR0fXPUoVlGIbkO4kwA9mDLGkPsjP4d3VzEFMDHklOx8tzYkjV96CJfYTf44ubg9iX4g-bbYpzWkM=w408-h305",true,true,String2Long("2"));
+       /* ESTACION estacion_bayobar=new ESTACION(String2Long("6"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("7"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("8"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("9"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("10"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("11"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("12"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("13"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("14"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("15"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("16"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("17"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("18"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("19"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("20"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("21"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("22"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+        ESTACION estacion_bayobar=new ESTACION(String2Long("23"),"BAYOBAR","AV. WISSE","HEROES DEL CENEPA OESTE","EST. BAYOBAR","-11.959719", "-76.987509","0",true,true,String2Long("2"));
+*/
+
+
+
+        estacionRepositorio.insertOrUpdate(context,estacion_bayobar);
+        estacionRepositorio.insertOrUpdate(context,estacion_santa_rosa);
+        estacionRepositorio.insertOrUpdate(context,estacion_san_martin);
+        estacionRepositorio.insertOrUpdate(context,estacion_san_carlos);
+        estacionRepositorio.insertOrUpdate(context,estacion_los_postes);
+
+
+
+
+
 
 
 
