@@ -13,12 +13,19 @@ import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -38,6 +45,16 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
     @Bind(R.id.mapView)
     MapView mapa;
 
+    @Bind(R.id.photoEstacionD)
+    ImageView photoEstacion;
+    @Bind(R.id.txt_tituloD)
+    TextView txtTitulo;
+    @Bind(R.id.txt_direccionD)
+    TextView txtDireccion;
+    @Bind(R.id.horaD)
+    TextView hora;
+    @Bind(R.id.lineInfoEstacion)
+    LinearLayout lineInfoEstacion;
     GoogleApiClient.Builder builder;
 
 
@@ -57,6 +74,8 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
 
         mapa.onCreate(savedInstanceState);
         mapa.getMapAsync(this);
+
+        lineInfoEstacion.setVisibility(View.GONE);
 
         return v;
     }
@@ -117,29 +136,66 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
 
         }
 
-//        pintarPosiciones(0);
+        pintarPosicionGPS("0");
     }
 
-    private void pintarPosiciones(int tag) {
+    Marker myMaker;
+    private void pintarPosicionGPS(String tag) {
+
         map.clear();
         LatLng punto;
+
 
         TIpoRepositoeio tipoRepositorio=new TIpoRepositoeio();
         List<ESTACION> lista = tipoRepositorio.getForId(this.getActivity(), String2Long("1")).getFk_estaciones();
 
         int i;
-        for(i=1 ; i<= lista.size();i++) {
-//            punto = new LatLng(Double.parseDouble(String.valueOf(lista.get(i).getLatitud())), Double.parseDouble(String.valueOf(lista.get(i).getLongitud())));
+        for(i=0 ; i<= lista.size()-1;i++) {
+            punto = new LatLng(Double.parseDouble(lista.get(i).getLatitud()), Double.parseDouble(lista.get(i).getLongitud()));
+            if(tag.equalsIgnoreCase(lista.get(i).getId().toString())){
+                myMaker = map.addMarker(new MarkerOptions().position(punto).icon(BitmapDescriptorFactory.fromResource(R.mipmap.icon_estacion_seleccionado)));
+                myMaker.setTag(lista.get(i).getId().toString());
 
+                Picasso.with(getContext()).load(lista.get(i).getFoto()).into(photoEstacion);
+                txtTitulo.setText(lista.get(i).getNombre().toString());
+                txtDireccion.setText(lista.get(i).getDirecion().toString());
+                hora.setText("08:00 - 23:00");
+            }else{
+                myMaker = map.addMarker(new MarkerOptions().position(punto).icon(BitmapDescriptorFactory.fromResource(R.mipmap.icon_estacion_noseleccionado)));
+                myMaker.setTag(lista.get(i).getId().toString());
+            }
         }
 
-//        List<Point> point = pointTrRepositorio.getAllPoints(this.getContext());
-//        Point p;
-//        LatLng punto;
 
+        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                lineInfoEstacion.setVisibility(View.VISIBLE);
+                pintarPosicionGPS((String) marker.getTag());
+                //lineInfoProveedor.setVisibility(View.VISIBLE);
+                return false;
+            }
+        });
 
+        map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                lineInfoEstacion.setVisibility(View.GONE);
+                map.clear();
+                pintarPosicionGPS("0");
+            }
+        });
+
+        map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                marker.getId();
+            }
+        });
 
     }
+
+
 
 
 }

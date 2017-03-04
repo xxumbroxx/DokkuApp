@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,6 +49,8 @@ public class DetalleEstacionActivity extends AppCompatActivity {
     FloatingActionButton fab;
     @Bind(R.id.fondo)
     ImageView fondo;
+    @Bind(R.id.close)
+    ImageButton close;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,16 +58,27 @@ public class DetalleEstacionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalle_estacion);
 
         ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+      //  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       // setSupportActionBar(toolbar);
         EstacionRepositorio estacionRepositorio = new EstacionRepositorio();
         Long id = getIntent().getLongExtra("id", 0);
         ESTACION estacion = estacionRepositorio.getForId(this, id);
+
         toolbar.setTitle(estacion.getNombre());
         if (estacion.getModulo()) {
             txtAtencion.setText("SI");
             txtTarjetas.setText("SI");
+        }else{
+            txtAtencion.setText("NO");
+            txtTarjetas.setText("NO");
         }
+
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
