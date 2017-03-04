@@ -1,5 +1,6 @@
 package pe.com.gmd.dokkuapp.view.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +15,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import pe.com.gmd.dokkuapp.R;
 import pe.com.gmd.dokkuapp.domain.orm.ESTACION;
+import pe.com.gmd.dokkuapp.view.activity.DetalleActivity;
+import pe.com.gmd.dokkuapp.view.activity.DetalleEstacionActivity;
 
 /**
  * Created by glarab on 2/03/2017.
@@ -62,6 +65,14 @@ public class EstacionesAdapter extends RecyclerView.Adapter<EstacionesAdapter.VH
         public VHEstaciones(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(v.getContext(), DetalleEstacionActivity.class);
+                    intent.putExtra("id",lista.get(getAdapterPosition()).getId());
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
     }
 

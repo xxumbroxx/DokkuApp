@@ -117,7 +117,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
 
         }
 
-        pintarPosiciones(0);
+//        pintarPosiciones(0);
     }
 
     private void pintarPosiciones(int tag) {
