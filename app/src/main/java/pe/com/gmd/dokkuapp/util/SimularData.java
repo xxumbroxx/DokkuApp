@@ -69,7 +69,7 @@ public class SimularData {
         ESTACION estacion_teran=new ESTACION(String2Long("34"),"FERNANDO TERAN","AV. PASEO DE LA REPUBLICA","Av. COSAC I","EST. TERAN","-12.168335","-77.018792","https://www.google.com.pe/maps/place/Estaci%C3%B3n+Teran/@-12.1683139,-77.0187709,3a,75y,90t/data=!3m8!1e2!3m6!1shttp:%2F%2Flh5.ggpht.com%2Fa21vDUGfS3sO3JmKJtptC7uYWVWXcuvTrXblTWGuz99H3h_Q5GG1vEOZR6oeoaxKxJFwZJUCq45mGVsyRVf5!2e7!3e27!6s%2F%2Flh3.googleusercontent.com%2Fproxy%2FIU1eJ4Qyu28FYkA9m-491tLtY0_LlcjDXApYmc31CDmWfPy9ZcYalJZ890_T52m8HUsfM9V4So3O1sqjMqUgSwOzwxLSksbl-vZNJ0AmzZZhZWPVcf2QyUhxu7bQVWBXnLhk7n2YaASUCLLt4BS-27ej-VbSvw%3Dw203-h152!7i512!8i384!4m5!3m4!1s0x9105b7847cebc927:0x89fbd448e7606cfe!8m2!3d-12.1683253!4d-77.018795!6m1!1e1",true,true,String2Long("1"));
         ESTACION estacion_rosario_de_villa=new ESTACION(String2Long("35"),"ROSARIO DE VILLA","Paseo De La Republica",", Distrito de Lima 15064","EST. ROSARIO DE VILLA","-12.173060", "-77.015089","http://img.uterodemarita.com.s3.amazonaws.com/wp-content/uploads/2014/08/park-and-ride.png",true,true,String2Long("1"));
         ESTACION estacion_matellini=new ESTACION(String2Long("36"),"MATELLINI","AV. PASEO DE LA REPUBLICA","Av. PROL ARIOSTO MATELLINI","EST. CARLOS IZAGUIRRE","-12.179332", "-77.009622","https://lh4.googleusercontent.com/proxy/Q0hqyjtCszgHxaLbfqvDt_lC00kCxbVhssbv0k5EL6Ev6-oMtSayQnXqs8YrhSimN2gmuoJoy96RvNtCiywa8pjhGi7o4safO4UEn2B7LDFRkn9Fbd3QVOk00bQwbBk6NeRMOK5Y6N3me7_n0xxntIarFYW4Wg=w408-h277",true,true,String2Long("1"));
-        ESTACION estacion_explotacion=new ESTACION(String2Long("37"),"EXPLOTACION","AV. NO HAY VIDA","TODO ES AMANECIDA","EST. ESCLAVITUD","-12.048514", "-77.031127","http://www.tnccontratistas.pe/web_anterior/wp-content/uploads/2014/04/TNC_Contratistas_Oficinas-GMD-2.jpg",true,true,String2Long("1"));
+        ESTACION estacion_explotacion=new ESTACION(String2Long("37"),"EXPLOTACION","AV. NO HAY VIDA","TODO ES AMANECIDA","EST. ESCLAVITUD","-12.048514", "-77.031127","",true,true,String2Long("1"));
        //ESTACION estacion_izaguirre=new ESTACION(String2Long("38"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
        // ESTACION estacion_izaguirre=new ESTACION(String2Long("39"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
        // ESTACION estacion_izaguirre=new ESTACION(String2Long("40"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
@@ -129,8 +129,7 @@ public class SimularData {
         RUTA regularB=new RUTA(String2Long("2"),"REGULAR B","B","NARANJAL","MATELLINI","Todas las estaciones","XXXXXXX",9,23,1,0,0,true,true,String2Long("1"));
         RUTA regularC=new RUTA(String2Long("3"),"REGULAR C","C","RAMON CASTILLA","MATELLINI","Todas las estaciones","XXXXXXX",6,23,0,0,30,true,true,String2Long("1"));
         RUTA regularD=new RUTA(String2Long("4"),"REGULAR D","D","NARANJAL","MATELLINI","Todas las estaciones","XXXXX00",6,9,0,0,30,true,true,String2Long("1"));
-        RUTA superExpresoNorte=new RUTA(String2Long("5"),"SUPER EXPRESO NORTE","SXN","NARANJAL","CENTRAL","Tiempo maximo 20 min.","XXXXX00",6,9,17,21
-                ,30,true,true,String2Long("1"));
+        RUTA superExpresoNorte=new RUTA(String2Long("5"),"SUPER EXPRESO NORTE","SXN","NARANJAL","CENTRAL","Tiempo maximo 20 min.","XXXXX00",6,9,17,21,30,true,true,String2Long("1"));
         rutaRepositorio.insertOrUpdate(context,regularA);
         rutaRepositorio.insertOrUpdate(context,regularB);
         rutaRepositorio.insertOrUpdate(context,regularC);
