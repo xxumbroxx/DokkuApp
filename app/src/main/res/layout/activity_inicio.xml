@@ -20,7 +20,6 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         android:visibility="visible"
-
         app:menu="@menu/activity_inicio_drawer" />
 
 </android.support.v4.widget.DrawerLayout>
