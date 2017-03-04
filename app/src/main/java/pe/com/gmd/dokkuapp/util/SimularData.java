@@ -71,8 +71,8 @@ public class SimularData {
         ESTACION estacion_matellini=new ESTACION(String2Long("36"),"MATELLINI","AV. PASEO DE LA REPUBLICA","Av. PROL ARIOSTO MATELLINI","EST. CARLOS IZAGUIRRE","-12.179332", "-77.009622","https://lh4.googleusercontent.com/proxy/Q0hqyjtCszgHxaLbfqvDt_lC00kCxbVhssbv0k5EL6Ev6-oMtSayQnXqs8YrhSimN2gmuoJoy96RvNtCiywa8pjhGi7o4safO4UEn2B7LDFRkn9Fbd3QVOk00bQwbBk6NeRMOK5Y6N3me7_n0xxntIarFYW4Wg=w408-h277",true,true,String2Long("1"));
         ESTACION estacion_explotacion=new ESTACION(String2Long("37"),"EXPLOTACION","AV. NO HAY VIDA","TODO ES AMANECIDA","EST. ESCLAVITUD","-12.048514", "-77.031127","http://www.tnccontratistas.pe/web_anterior/wp-content/uploads/2014/04/TNC_Contratistas_Oficinas-GMD-2.jpg",true,true,String2Long("1"));
        //ESTACION estacion_izaguirre=new ESTACION(String2Long("38"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-       // ESTACION estacion_izaguirre=new ESTACION(String2Long("39"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-       // ESTACION estacion_izaguirre=new ESTACION(String2Long("40"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+       //ESTACION estacion_izaguirre=new ESTACION(String2Long("39"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+       //ESTACION estacion_izaguirre=new ESTACION(String2Long("40"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
       //  ESTACION estacion_izaguirre=new ESTACION(String2Long("41"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
 
 

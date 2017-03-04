@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -201,11 +203,15 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
             }
         }
 
-
+        lineInfoEstacion.setVisibility(View.VISIBLE);
         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                lineInfoEstacion.setVisibility(View.VISIBLE);
+                YoYo.with(Techniques.FadeInUp)
+                        .duration(900)
+                        .playOn(lineInfoEstacion);
+
+
                 pintarPosicionGPS((String) marker.getTag());
                 //lineInfoProveedor.setVisibility(View.VISIBLE);
                 return false;
@@ -215,6 +221,8 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
         map.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
+
+
                 lineInfoEstacion.setVisibility(View.GONE);
                 map.clear();
                 pintarPosicionGPS("0");
