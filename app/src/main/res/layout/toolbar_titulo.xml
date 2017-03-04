@@ -13,6 +13,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:id="@+id/closeDetalle"
+            android:background="@drawable/ic_arrow_back"
+            />
         <TextView
             android:id="@+id/texto_toolbar_tituloboton"
             android:layout_width="match_parent"

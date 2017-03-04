@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,6 +43,9 @@ public class DetalleActivity extends AppCompatActivity {
     AppBarLayout appbar;
     @Bind(R.id.coordinator)
     CoordinatorLayout coordinator;
+    @Bind(R.id.closeDetalle)
+    ImageButton closeDetalle;
+
     private static final int[] ICONS = new int[]{R.drawable.ic_map,R.drawable.ic_paraderos, R.drawable.ic_rutas/*, R.drawable.ic_contract,R.drawable.ic_constcenter*/};
 
     final List<Fragment> fragments = new ArrayList<>();
@@ -86,6 +90,13 @@ public class DetalleActivity extends AppCompatActivity {
         initTab();
         mViewPager.setCurrentItem(0);
         textoToolbarTituloboton.setText("METROPOLITANO");
+
+        closeDetalle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     void initTab(){
