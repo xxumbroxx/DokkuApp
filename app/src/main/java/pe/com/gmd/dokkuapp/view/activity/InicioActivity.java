@@ -31,6 +31,7 @@ public class InicioActivity extends AppCompatActivity
     @Bind(R.id.nav_view)
     NavigationView navView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
