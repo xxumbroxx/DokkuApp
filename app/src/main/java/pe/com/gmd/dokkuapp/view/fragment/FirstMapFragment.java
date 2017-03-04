@@ -208,7 +208,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
             }
         }
 
-        //lineInfoEstacion.setVisibility(View.VISIBLE);
+//        lineInfoEstacion.setVisibility(View.VISIBLE);
         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
@@ -218,7 +218,8 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
 
 
                 pintarPosicionGPS((String) marker.getTag());
-                //lineInfoProveedor.setVisibility(View.VISIBLE);
+//                lineInfoProveedor.setVisibility(View.VISIBLE);
+                lineInfoEstacion.setVisibility(View.VISIBLE);
                 return false;
             }
         });

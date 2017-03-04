@@ -42,6 +42,22 @@
 
 
                     <!--Boton de Ingreso -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textSize="32dp"
+                        android:layout_margin="16dp"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="italic"
+                        android:typeface="normal"
+                        android:layout_height="wrap_content"
+                        android:text="INICIA SESIÓN"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:textColor="@color/accent"
+                        android:typeface="normal"
+                        android:text="Inicia sesión con tu cuenta de Facebook y conoce todo lo que ofrece el tranporte moderno de Lima."/>
 
                     <LinearLayout
                         android:layout_height="wrap_content"
@@ -49,6 +65,8 @@
                         android:orientation="vertical"
                         android:paddingLeft="40dp"
                         android:paddingRight="32dp"
+                        android:visibility="gone"
+                        android:textStyle="italic"
                         android:gravity="center">
 
                         <!--Titutlo -->
