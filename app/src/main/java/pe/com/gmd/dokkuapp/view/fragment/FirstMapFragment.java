@@ -7,6 +7,7 @@ package pe.com.gmd.dokkuapp.view.fragment;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.Point;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -18,6 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -56,7 +59,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
     @Bind(R.id.lineInfoEstacion)
     LinearLayout lineInfoEstacion;
     GoogleApiClient.Builder builder;
-
+    Boolean first=true;
 
     public static FirstMapFragment newInstance() {
         FirstMapFragment fragment = new FirstMapFragment();
@@ -104,6 +107,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
     public void onPause() {
         super.onPause();
         mapa.onPause();
+        first=true;
         //   apiClient.stopAutoManage(getActivity());
         //  apiClient.disconnect();
 
@@ -128,10 +132,41 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
+
+        map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
+            map.setMaxZoomPreference(13);
+            map.setMaxZoomPreference(16);
+
             map.setMyLocationEnabled(true);
             map.getUiSettings().setMyLocationButtonEnabled(true);
+            map.setOnMyLocationChangeListener(new GoogleMap.OnMyLocationChangeListener() {
+
+                public void onMyLocationChange(Location pos) {
+                    // TODO Auto-generated method stub
+
+                    // Extraigo la Lat y Lon del Listener
+                    double lat = pos.getLatitude();
+                    double lon = pos.getLongitude();
+
+                    // Muevo la cámara a mi posición
+                    if(first){
+                        CameraUpdate cam = CameraUpdateFactory.newLatLng(new LatLng(
+                                lat, lon));
+
+                        map.moveCamera(cam);
+                        CameraUpdate ZoomCam = CameraUpdateFactory.zoomTo(14);
+                        map.moveCamera(ZoomCam);
+                       // map.animateCamera(ZoomCam);
+                        first=false;
+                    }
+
+
+                    // Notifico con un mensaje al usuario de su Lat y Lon
+
+                }
+            });
         } else {
 
         }
