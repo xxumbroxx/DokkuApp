@@ -5,6 +5,7 @@ package pe.com.gmd.dokkuapp.view.fragment;
  */
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ import pe.com.gmd.dokkuapp.R;
 import pe.com.gmd.dokkuapp.domain.orm.ESTACION;
 import pe.com.gmd.dokkuapp.service.dao.Repositorio;
 import pe.com.gmd.dokkuapp.service.dao.impl.TIpoRepositoeio;
+import pe.com.gmd.dokkuapp.view.activity.DetalleEstacionActivity;
 
 
 public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
@@ -55,6 +57,8 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
     TextView hora;
     @Bind(R.id.lineInfoEstacion)
     LinearLayout lineInfoEstacion;
+    @Bind(R.id.idEstacion)
+    TextView idEstacion;
     GoogleApiClient.Builder builder;
 
 
@@ -140,6 +144,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
     }
 
     Marker myMaker;
+    List<ESTACION> lista;
     private void pintarPosicionGPS(String tag) {
 
         map.clear();
@@ -147,7 +152,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
 
 
         TIpoRepositoeio tipoRepositorio=new TIpoRepositoeio();
-        List<ESTACION> lista = tipoRepositorio.getForId(this.getActivity(), String2Long("1")).getFk_estaciones();
+        lista = tipoRepositorio.getForId(this.getActivity(), String2Long("1")).getFk_estaciones();
 
         int i;
         for(i=0 ; i<= lista.size()-1;i++) {
@@ -160,6 +165,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
                 txtTitulo.setText(lista.get(i).getNombre().toString());
                 txtDireccion.setText(lista.get(i).getDirecion().toString());
                 hora.setText("08:00 - 23:00");
+                idEstacion.setText(lista.get(i).getId().toString());
             }else{
                 myMaker = map.addMarker(new MarkerOptions().position(punto).icon(BitmapDescriptorFactory.fromResource(R.mipmap.icon_estacion_noseleccionado)));
                 myMaker.setTag(lista.get(i).getId().toString());
@@ -190,6 +196,16 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onInfoWindowClick(Marker marker) {
                 marker.getId();
+            }
+        });
+
+        lineInfoEstacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(v.getContext(), DetalleEstacionActivity.class);
+                intent.putExtra("id",Long.parseLong(idEstacion.getText().toString()));
+                v.getContext().startActivity(intent);
+
             }
         });
 
