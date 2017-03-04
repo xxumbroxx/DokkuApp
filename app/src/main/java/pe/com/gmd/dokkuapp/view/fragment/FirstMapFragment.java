@@ -83,7 +83,6 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
 
         mapa.onCreate(savedInstanceState);
         mapa.getMapAsync(this);
-
         lineInfoEstacion.setVisibility(View.GONE);
 
         return v;
@@ -209,7 +208,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
             }
         }
 
-        lineInfoEstacion.setVisibility(View.VISIBLE);
+        //lineInfoEstacion.setVisibility(View.VISIBLE);
         map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
