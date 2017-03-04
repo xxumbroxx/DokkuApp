@@ -55,15 +55,19 @@ public class DetalleEstacionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detalle_estacion);
 
         ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+      //  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       // setSupportActionBar(toolbar);
         EstacionRepositorio estacionRepositorio = new EstacionRepositorio();
         Long id = getIntent().getLongExtra("id", 0);
         ESTACION estacion = estacionRepositorio.getForId(this, id);
+
         toolbar.setTitle(estacion.getNombre());
         if (estacion.getModulo()) {
             txtAtencion.setText("SI");
             txtTarjetas.setText("SI");
+        }else{
+            txtAtencion.setText("NO");
+            txtTarjetas.setText("NO");
         }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
