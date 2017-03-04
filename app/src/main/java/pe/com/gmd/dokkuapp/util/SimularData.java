@@ -39,22 +39,43 @@ public class SimularData {
         ESTACION estacion_uni=new ESTACION(String2Long("8"),"UNI","AV. Tupac Amaru RIMAC","Av. EDUARDO DE HABICH","EST. HABICH","-12.024247","-77.048853","https://lh4.googleusercontent.com/proxy/fVcHHiDf0PhXfxOSVUL5ul33d5adPYObhQbbpzNANKcZrDcCxVAVb0F_7Sb72M6Tcn7w82R2QmpAbubDlxcNmNT6fWoTVgrUMEDxWFD4nGpegongr5o2_jzOBvGExI1ul0x4h6PsvP8ohoKPB0bfrJMcSXSyRg=w408-h408",true,true,String2Long("1"));
         ESTACION estacion_parque_del_trabajo=new ESTACION(String2Long("9"),"PARQUE DEL TRABAJO","AV. CAQUETA RIMAC","Av. FRANCISCO PIZARRO","EST. PARQUE DEL TRABAJO","-12.029335", "-77.044257","https://lh4.googleusercontent.com/proxy/PR0u1qcjcDAhVh4kf1dsTRLv2FFDbRRNIGrVPKlvqwItY6CkvmfNEJjQqVyfEj_dQabemr1Eiipe4A_sVngQufU2VF2AkLSZ22cvqDgYbNPz8pqyvm7Y_Caw8I7KbNaQN6PgAbGl5MPbwNMkDad4Ys73Le_m8g=w408-h305",true,true,String2Long("1"));
         ESTACION estacion_caqueta=new ESTACION(String2Long("10"),"CAQUETA","AV. CAQUETA RIMAC","PANAMERICANA NORTE","EST. CAQUETA","-12.036706", "-77.043623","https://lh4.googleusercontent.com/proxy/lfRsvH2r1QwHcmn4xNc67fWGV6B7z9v4HgPMXVhBJJDIxmHXbTH9w-g3Dy-9dZ9dQ8GcgD-d9I1eVmDB0pva5PK18ig_wSlpmb2M1tYu-oFh_EYkCkW46v9rk4ZPZ_KDK9fxswxQDPRtwyN0RuI7pL8-z6moP2w=w408-h305",true,true,String2Long("1"));
+//DESDE AQUI DE DEBE SEGUIR LLENANDO
         ESTACION estacion_dos_de_mayo=new ESTACION(String2Long("11"),"DOS DE MAYO","AV. ALFONSO UGARTE CERCADO DE LIMA","OV. DOS DE MAYO","EST. DOS DE MAYO","-12.047227","-77.042707","https://lh6.googleusercontent.com/proxy/O5fPwV5XHob20WRdDU6PWF1KEty-G3GOh_21z7qiyTQxS0yXXF7ZBCWa2dCQYSpriwA02pqu7bqniKsmAAhjjIijuUmMZRQ7llwWgF22uxuKMGTFzHA8kA4hazIFzsS8L1iHgJf6DzPVF4TUIjBE4KuAwYlRwm0=w408-h256",true,true,String2Long("1"));
         ESTACION estacion_quilca=new ESTACION(String2Long("12"),"QUILCA","AV. ALFONSO UGARTE CERCADO DE LIMA","Av. QUILCA","EST. QUILCA","-12.051835", "-77.042283","https://lh3.googleusercontent.com/proxy/tqXP0eDtvwqQvd2hXO3IB4IdlK1wyRtNylYQaq-7tqSNEaECR7p_-fV_7aldVpi9Cyjkndswsg71sodbD4RLlPlFAcDKdlKK3K4rxsnPTzJgBpP8Jvk8wqmzGCz8Nx1SfVbKECDaLhgPU2xlDiBpB_-IRvZ6Uxg=w408-h229",true,true,String2Long("1"));
-/*
-        ESTACION estacion_izaguirr=new ESTACION(String2Long("13"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-        ESTACION estacion_izaguirrzz=new ESTACION(String2Long("14"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-        ESTACION estacion_izaguirre=new ESTACION(String2Long("15"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-        ESTACION estacion_izaguirre=new ESTACION(String2Long("16"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-        ESTACION estacion_izaguirre=new ESTACION(String2Long("17"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-        ESTACION estacion_izaguirre=new ESTACION(String2Long("18"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-        ESTACION estacion_izaguirre=new ESTACION(String2Long("19"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-        ESTACION estacion_izaguirre=new ESTACION(String2Long("20"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-        ESTACION estacion_izaguirre=new ESTACION(String2Long("21"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-        ESTACION estacion_izaguirre=new ESTACION(String2Long("22"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
-        ESTACION estacion_izaguirre=new ESTACION(String2Long("23"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_españa=new ESTACION(String2Long("13"),"ESPAÑA","AV. ALFONSO UGARTE,CERCADO DE LIMA","Av. ESPAÑA","EST. ESPAÑA","-12.057185", "-77.041822","https://lh3.googleusercontent.com/-SyBTSe1zbWw/WJuziHqDAwI/AAAAAAAAtRk/XmLol1zKynQnkGOav5HghFVEStBTtRf9ACLIB/s634-k-no/",true,true,String2Long("1"));
 
+        ESTACION estacion_tacna=new ESTACION(String2Long("14"),"TACNA","AV. EMANCIPACION,CERCADO DE LIMA","Av. TACNA","EST. TACNA","-12.046585", "-77.037274","https://lh4.googleusercontent.com/proxy/WgSvQjvpntOqmwv6GfM-845c9MFh8tND7BemxSOHZOXdQb04KaY6ZdDuV-y5c2_Ma3CrKjLVgwAAN4aKy2zyigpo4_tbVw9C2lOJV1DA4Kqs3BjnmI2WbcI9bVFcXmT3qpPSQFNSYorXwDifvP9E8OS9n_OvrA=w507-h200",true,true,String2Long("1"));
+        ESTACION estacion_jiron_de_la_union=new ESTACION(String2Long("15"),"JIRON DE LA UNION","AV. EMANCIPACION CERCADO DE LIMA", "JR DE LA UNION","EST. JR DE LA UNION","-12.049223", "-77.032944","https://lh3.googleusercontent.com/-N7S8eYboa7c/VHPY84HjU0I/AAAAAAAABl0/2wwF8NOE0_UV7jTMGF8Q1bEZUoPo2ypzQCJkC/s408-k-no/",true,true,String2Long("1"));
+        ESTACION estacion_colmena=new ESTACION(String2Long("16"),"COLMENA","AV. NICOLAS DE PIEROLA ,CERCADO DE LIMA","JR LAMPA","EST. COLMENA","-12.052182", "-77.032753","https://lh6.googleusercontent.com/proxy/HcKv0VIH9bxA0yQ7_QOnQENwpRnl48dVIfebTcVfsy4gops97-xG9wpICZmVEtMOBQ-pcSNNaBw--dqM12NTMGqI4-dqQecewEQ3V5k5GE4yixGXdrdOUILp9PhMwQbBNCzIk_qElTfXA11hYrdCsaYjdePC5g=w408-h228",true,true,String2Long("1"));
+
+        ESTACION estacion_central=new ESTACION(String2Long("17"),"CENTRAL","AV. PASEO DE LA REPUBLICA, CERCADO DE LIMA","Av. BOLIVIA","EST. CENTRAL","-12.057736", "-77.035982","https://lh5.googleusercontent.com/proxy/Yq0gWYctL2Px7AilsAUTNhEwh1IKm42n6M8_RKJ7ClaQ5TG0TqyR1LPmzo6YoSIzRDT0viGjK1ftt0blOUGVk3uwJq1CdajzihYXSV-Zm7fhWqdiuCViG32VHtPlJ14uTni73G-qo4bWhdUOBt_kf5s4q0tDvw=w408-h306",true,true,String2Long("1"));
+
+        ESTACION estacion_estadio_nacional=new ESTACION(String2Long("18"),"ESTADIO NACIONAL","AV. PASEO DE LA REPUBLICA, CERCADO DE LIMA","JR SEBASTIAN BARRANCA","EST. ESTADIO NACIONAL","-11.989815", "-77.057035","https://lh3.googleusercontent.com/-X8qNoFve5uc/V9Ltf1VuMfI/AAAAAAAAGwU/KVaHv6fKQ440x88ctuoRrFoyZahVqou5QCJkC/s408-k-no/",true,true,String2Long("1"));
+        ESTACION estacion_mexico=new ESTACION(String2Long("19"),"MEXICO","AV. PASEO DE LA REPUBLICA,LA VICTORIA","Av. MEXICO","EST. MEXICO","-12.076919", "-77.028870","https://lh3.googleusercontent.com/-wUbqPUxpHfI/V6YVyksSpTI/AAAAAAAAm8A/oY4mdrQbleENb0dxec3XIAAMYG5qBABLwCJkC/s408-k-no/",true,true,String2Long("1"));
+        ESTACION estacion_canada=new ESTACION(String2Long("20"),"CANADA","\"AV. PASEO DE LA REPUBLICA","Av. CANADA","EST. CARLOS CANADA","-12.082368", "-77.026632","https://lh4.googleusercontent.com/-XDyGIpyauzA/WKOEUcXqRaI/AAAAAAAAC04/pm8txe5NoMY3KCsIA0IpG1KsCdmLRlS8QCLIB/s408-k-no/",true,true,String2Long("1"));
+        ESTACION estacion_javier_prado=new ESTACION(String2Long("21"),"JAVIER PRADO","AV. PASEO DE LA REPUBLICA","Av. JAVIER PRADO","EST. JAVIER PRADO","-12.089260", "-77.023568","https://lh4.googleusercontent.com/proxy/L4vzyO5EnEANzJfD4rdIEnA29Xb2T-xNX3ySAGJr_718CutqnkwefUcMDoKFTQhdwAWSJexFOZantzJybDuejA8Om1QCVk0lksxLkjDPRidF6kjsDpSTjyVtmQL6YeNr8rCqu-uCLTkHgKCaWdtSKQslpO-tag=w408-h305",true,true,String2Long("1"));
+        ESTACION estacion_carnaval_moreyra=new ESTACION(String2Long("22"),"CARNAVAL Y MOREYRA","AV. PASEO DE LA REPUBLICA","Av. CARNAVAL Y MOREYRA","EST. CARNAVL Y MOREYRA","-12.096943","-77.025104","https://lh3.googleusercontent.com/proxy/iYlNVeusNUa0MUXp60Qqm6URt5_BdkTBZiPPuvGDRnyBzoOUeE1Ksf6-o9vG8GhVZ_x10KMe6CHSJ2Kli746pCL6bQINex_uB5aa_Y93m-Y8Tw3X2MbzzXVd8ds7As9CU0WnncsQ7NFYnsr_HI4lebYGAioY04Y=w408-h228",true,true,String2Long("1"));
+        ESTACION estacion_aramburu=new ESTACION(String2Long("23"),"ARAMBURU","AV. PASEO DE LA REPUBLICA","Av. ARAMBURU","EST. ARAMBURU","-12.102702", "-77.027334","https://lh3.googleusercontent.com/proxy/XR9thCfbmcGz8nP6J9-UZShCpI241SWutVyBSc4Ft155zBh5cRV22hSa7B-nj9uLk0Y3iHQ1U1c7C3v6vsADuEG-G_56Soag98VLKQI-1ai41T3jlN8TB88F-izE7ksVBPPhBQBRPDCQugEInSzO6LJwgHKZlw=w408-h305",true,true,String2Long("1"));
+        ESTACION estacion_domingo_orue=new ESTACION(String2Long("24"),"DOMINGO ORUE","AV. PASEO DE LA REPUBLICA","Av.DOMINGO ORUE","EST. DOMINGO ORUE","-12.108525", "-77.026431","https://lh4.googleusercontent.com/-zngiUfdn1RM/V65WraU8DHI/AAAAAAAAEYk/8S6f6CMKrH0gWIF0czVfkraYbixCdd2OQCJkC/s408-k-no/",true,true,String2Long("1"));
+        ESTACION estacion_angamos=new ESTACION(String2Long("25"),"ANGAMOS","AV. PASEO DE LA REPUBLICA","Av. ANGAMOS","EST. ANGAMOS","-12.113328", "-77.025970","https://www.google.com.pe/maps/place/Estaci%C3%B3n+Angamos/@-12.113485,-77.0259832,3a,75y,90t/data=!3m8!1e2!3m6!1s-p-qdcsCsy70%2FWE8aGS0y40I%2FAAAAAAAClNE%2FgLPkl7ODYLkRlxRSTPuMYpazsCVWEljVwCLIB!2e4!3e12!6s%2F%2Flh6.googleusercontent.com%2F-p-qdcsCsy70%2FWE8aGS0y40I%2FAAAAAAAClNE%2FgLPkl7ODYLkRlxRSTPuMYpazsCVWEljVwCLIB%2Fs156-k-no%2F!7i3264!8i2448!4m5!3m4!1s0x9105c8116111d40f:0xac43ee237d1bd894!8m2!3d-12.1132935!4d-77.0259679!6m1!1e1",true,true,String2Long("1"));
+        ESTACION estacion_ricardo_palma=new ESTACION(String2Long("26"),"RICARDO PALMA","AV. PASEO DE LA REPUBLICA","Av.RICARDO PALMA","EST. RICARDO PALMA","-12.119014", "-77.025899","https://www.google.com.pe/maps/place/Estaci%C3%B3n+Ricardo+Palma/@-12.1191347,-77.0258697,3a,75y,90t/data=!3m8!1e2!3m6!1s-PflveqSkQOA%2FWB--wLPnf5I%2FAAAAAAABlIs%2FLKvJM8VIC4IWweph5NXzoKfOAIEPMPkdACLIB!2e4!3e12!6s%2F%2Flh4.googleusercontent.com%2F-PflveqSkQOA%2FWB--wLPnf5I%2FAAAAAAABlIs%2FLKvJM8VIC4IWweph5NXzoKfOAIEPMPkdACLIB%2Fs156-k-no%2F!7i4618!8i3464!4m12!1m6!3m5!1s0x9105c8116111d40f:0xac43ee237d1bd894!2sEstaci%C3%B3n+Angamos!8m2!3d-12.1132935!4d-77.0259679!3m4!1s0x9105c81a741e5b71:0x28bc88e9df18f11d!8m2!3d-12.118979!4d-77.0258948!6m1!1e1",true,true,String2Long("1"));
+       /* ESTACION estacion_izaguirre=new ESTACION(String2Long("27"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("28"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("29"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("30"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("31"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("32"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("33"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("34"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("35"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("36"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("37"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("38"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("39"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("40"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
+        ESTACION estacion_izaguirre=new ESTACION(String2Long("41"),"IZAGUIRRE","AV. Tupac Amaru Los Olivos","Av. iZAGUIRRE","EST. CARLOS IZAGUIRRE","-11.989815", "-77.057035","0",true,true,String2Long("1"));
 */
+
 
         estacionRepositorio.insertOrUpdate(context,estacion_naranjal);
         estacionRepositorio.insertOrUpdate(context,estacion_izaguirre);
@@ -68,10 +89,20 @@ public class SimularData {
         estacionRepositorio.insertOrUpdate(context,estacion_caqueta);
         estacionRepositorio.insertOrUpdate(context,estacion_dos_de_mayo);
         estacionRepositorio.insertOrUpdate(context,estacion_quilca);
-
-
-
-
+        estacionRepositorio.insertOrUpdate(context,estacion_españa);
+        estacionRepositorio.insertOrUpdate(context,estacion_tacna);
+        estacionRepositorio.insertOrUpdate(context,estacion_jiron_de_la_union);
+        estacionRepositorio.insertOrUpdate(context,estacion_colmena);
+        estacionRepositorio.insertOrUpdate(context,estacion_central);
+        estacionRepositorio.insertOrUpdate(context,estacion_estadio_nacional);
+        estacionRepositorio.insertOrUpdate(context,estacion_mexico);
+        estacionRepositorio.insertOrUpdate(context,estacion_canada);
+        estacionRepositorio.insertOrUpdate(context,estacion_javier_prado);
+        estacionRepositorio.insertOrUpdate(context,estacion_carnaval_moreyra);
+        estacionRepositorio.insertOrUpdate(context,estacion_aramburu);
+        estacionRepositorio.insertOrUpdate(context,estacion_domingo_orue);
+        estacionRepositorio.insertOrUpdate(context,estacion_angamos);
+        estacionRepositorio.insertOrUpdate(context,estacion_ricardo_palma);
 
 
         TIPO linea1=new TIPO(String2Long("2"),"","LINEA 1","#33333","LINEA 1","LINEA 1","TARJETA");
