@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="pe.com.gmd.dokkuapp.view.activity.DetalleEstacionActivity"
+    tools:showIn="@layout/activity_detalle_estacion">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Modulo de atención"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="SI"
+                    android:textColor="#000"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:id="@+id/txt_atencion" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Compra de tarjetas"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="SI"
+                    android:textColor="#000"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:id="@+id/txt_tarjetas" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:weightSum="2"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Horario"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="8:00 23:00"
+                    android:textColor="#000"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:id="@+id/txt_horario" />
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:id="@+id/fragment"
+                android:layout_height="200dp"></FrameLayout>
+
+            <TextView
+                android:id="@+id/txt_direccion"
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_margin="8dp"
+                android:id="@+id/txt_texto"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+
+
+</android.support.v4.widget.NestedScrollView>
