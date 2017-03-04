@@ -131,7 +131,7 @@ public class VistaPuntoFragment  extends Fragment implements OnMapReadyCallback 
         LatLng position = new LatLng(latitud, longitud);
         map.addMarker(new MarkerOptions()
                 .position(position)
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.icon_estacion_seleccionado)));
         moverUbicacionActual();
     }
 
