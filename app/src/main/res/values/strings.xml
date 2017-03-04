@@ -145,5 +145,11 @@ Por ello, se ha creado este canal de comunicación con la finalidad de impulsar 
         "when a user tries to pick up one of cards.\n\n"
     </string>
 
+    <string name="txt_mapaenviarubicacion_aviso">Aviso!</string>
+    <string name="txt_mapaenviarubicacion_aviso_contenido">Para acceder a esta opción debes tener los permisos de Ubicación activado.</string>
+    <string name="txt_mapaenviarubicacion_aviso_contenido_gps">Para acceder a esta opción debes tener el GPS activado.</string>
+    <string name="txt_mapaenviarubicacion_aviso_boton">Aceptar</string>
+
+
     <string name="button_text_howtoGet">Cómo llegar</string>
 </resources>

@@ -4,8 +4,8 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/principal"
-            android:icon="@drawable/ic_directions_bus_black_24dp"
-            android:title="Como llegar" />
+            android:icon="@drawable/ic_navigation"
+            android:title="¿Cómo llegar?" />
 
         <item android:title="Metropolitano">
             <menu>

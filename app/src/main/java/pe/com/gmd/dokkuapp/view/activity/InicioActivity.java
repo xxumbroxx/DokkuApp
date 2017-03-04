@@ -3,9 +3,11 @@ package pe.com.gmd.dokkuapp.view.activity;
 import android.Manifest;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +16,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
 import android.view.View;
@@ -50,7 +53,11 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.List;
+
 import pe.com.gmd.dokkuapp.R;
+import pe.com.gmd.dokkuapp.domain.orm.ESTACION;
+import pe.com.gmd.dokkuapp.service.dao.impl.TIpoRepositoeio;
 import pe.com.gmd.dokkuapp.util.PermissionChecker;
 import pe.com.gmd.dokkuapp.util.Util;
 import pe.com.gmd.dokkuapp.view.fragment.MapsHowToGetFragmen;
@@ -64,6 +71,10 @@ public class InicioActivity extends AppCompatActivity
 
     Location mLocationGPS;
     Location mLocationCamera;
+
+    Location mLocationRouteOne;
+    Location mLocationRouteTwo;
+    Location mLocationRouteThree;
 
     ImageButton btnGps;
     AppCompatButton btnSearchPlace;
@@ -81,6 +92,7 @@ public class InicioActivity extends AppCompatActivity
     private GoogleMap mMap;
     private GoogleApiClient mGoogleApiClient;
     private static final int REQUEST_CODE_AUTOCOMPLETE = 1;
+    public static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,28 +141,6 @@ public class InicioActivity extends AppCompatActivity
         btnRouteTwo.setOnClickListener(this);
         btnRouteThree.setOnClickListener(this);
     }
-
-//    @Override
-//    public void onMapReady(GoogleMap map) {
-//        LatLng sydney = new LatLng(-33.867, 151.206);
-//
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-//                == PackageManager.PERMISSION_GRANTED) {
-//            map.setMyLocationEnabled(true);
-//        } else {
-//            // Show rationale and request permission.
-//        }
-//        map.getUiSettings().setMyLocationButtonEnabled(true);
-//        map.getUiSettings().setZoomControlsEnabled(true);
-//
-//        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
-//
-//        map.addMarker(new MarkerOptions()
-//                .title("Sydney")
-//                .snippet("The most populous city in Australia.")
-//                .position(sydney));
-//    }
-
     /***********************************Bloque de mapas*****************************/
 
     @Override
@@ -178,16 +168,48 @@ public class InicioActivity extends AppCompatActivity
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+//        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION)
+//                != PackageManager.PERMISSION_GRANTED &&
+//                ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION)
+//                        != PackageManager.PERMISSION_GRANTED) {
+//
+//
+//        }
+
+
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION)
                         != PackageManager.PERMISSION_GRANTED) {
 
+            final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+            builder.setCancelable(false);
+            builder.setTitle(R.string.txt_mapaenviarubicacion_aviso)
+                    .setMessage(R.string.txt_mapaenviarubicacion_aviso_contenido)
+                    .setPositiveButton(R.string.txt_mapaenviarubicacion_aviso_boton, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            ActivityCompat.requestPermissions(InicioActivity.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+                        }
+                    });
+            builder.create();
+            builder.show();
 
+        }else{
+
+            if(PermissionChecker.isGpsEnable(this)){
+
+                //Validar permisos
+                mMap.setMyLocationEnabled(true);
+                mMap.getUiSettings().setMyLocationButtonEnabled(false);
+
+            }
+            else{
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            }
         }
 
-        mMap.setMyLocationEnabled(true);
-        mMap.getUiSettings().setMyLocationButtonEnabled(false);
+
 
         mMap.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
             @Override
@@ -294,15 +316,10 @@ public class InicioActivity extends AppCompatActivity
 
             //startIntentService(location);
         } else {
-             /*Toast.makeText(getApplicationContext(),
-
-                    "Sorry! unable to create maps", Toast.LENGTH_SHORT)
-                    .show();*/
         }
 
     }
     /**Fin Bloque de mapas*/
-
 
 
     @Override
@@ -313,8 +330,6 @@ public class InicioActivity extends AppCompatActivity
                     openAutocompleteActivity();
 //                    searchPlace.setEnabled(false);//Se bloquea hasta cambiar de panatalla
 //                }
-                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show();
-
                 break;
             case R.id.btn_gps:
                 if(mLocationCamera!=null && mLocationGPS!=null){
@@ -323,19 +338,24 @@ public class InicioActivity extends AppCompatActivity
                     }
                     changeMap(mLocationGPS);
                 }else{
-                    Toast.makeText(this, "No se encuentra la Ubicacion de GPS", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "No se encuentra la Ubicacion del GPS", Toast.LENGTH_SHORT).show();
                 }
 
-
-                Toast.makeText(this, "btn_gps", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnRouteOne:
+
+                sendToNavegation(0,-12.0461518,-77.0276599);
+
                 Toast.makeText(this, "btnRouteOne", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnRouteTwo:
+                sendToNavegation(1,-11.982802,-77.0608073);
+
                 Toast.makeText(this, "btnRouteTwo", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnRouteThree:
+                sendToNavegation(0,-12.0576694,-77.0381649);
+
                 Toast.makeText(this, "btnRouteThree", Toast.LENGTH_SHORT).show();
                 break;
         }
@@ -405,6 +425,162 @@ public class InicioActivity extends AppCompatActivity
         }
     }
 
+    /**Navegacion*/
+    public void sendToNavegation(int navigationValue, double latitudFin, double longitudFin ){
+        //Google Maps
+        if (navigationValue == 0){
+            goToGoogleMaps(mLocationGPS.getLatitude(), mLocationGPS.getLongitude(),latitudFin,longitudFin);
+        }
+        // Waze
+        else if(navigationValue == 1) {
+            goToWaze(latitudFin, longitudFin);
+        }
+    }
+    public void goToWaze(double latFin, double lngFin){
+        boolean installed = appInstalledOrNot("com.waze");
+        if(installed) {
+            try {
+                String url = "waze://?ll="+latFin+","+lngFin+"&navigate=yes";
+                Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( url ) );
+
+                startActivity(intent);
+            }
+            catch (Exception ex  ) {
+                ex.printStackTrace();
+            }
+        }
+        else{
+            final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+            builder.setCancelable(false);
+            builder.setTitle("Descargar aplicación")
+                    .setMessage("Para utilizar la funcionalidad de navegación debe instalar Waze")
+                    .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Intent intent =
+                                    new Intent( Intent.ACTION_VIEW, Uri.parse( "market://details?id=com.waze" ) );
+                            startActivity(intent);
+                        }
+                    })
+                    .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                        }
+                    });
+            builder.create();
+            builder.show();
+        }
+
+
+    }
+    public void goToGoogleMaps(double latIni, double lngIni, double latFin, double lngFin){
+
+        boolean installed = appInstalledOrNot("com.google.android.apps.maps");
+        if(installed) {
+            try {
+                final Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?" + "saddr=" + latIni + "," + lngIni + "&daddr=" + latFin + "," + lngFin));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+            }
+            catch (Exception ex  ) {
+                ex.printStackTrace();
+            }
+        }
+        else{
+            final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+            builder.setCancelable(false);
+            builder.setTitle("Descargar aplicación")
+                    .setMessage("Para utilizar la funcionalidad de navegación debe instalar Google Maps")
+                    .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Intent intent =
+                                    new Intent( Intent.ACTION_VIEW, Uri.parse( "market://details?id=com.google.android.apps.maps" ) );
+                            startActivity(intent);
+                        }
+                    })
+                    .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                        }
+                    });
+            builder.create();
+            builder.show();
+        }
+
+    }
+    private boolean appInstalledOrNot(String uri) {
+        PackageManager pm = getPackageManager();
+        boolean app_installed;
+        try {
+            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
+            app_installed = true;
+        }
+        catch (PackageManager.NameNotFoundException e) {
+            app_installed = false;
+        }
+        return app_installed;
+    }
+    /**Fin Mapas*/
+
+    List<ESTACION> lista;
+    private void pintarPosicionGPS(String tag) {
+
+        mMap.clear();
+        LatLng estaciones;
+
+        TIpoRepositoeio tipoRepositorio=new TIpoRepositoeio();
+        lista = tipoRepositorio.getForId(this, String2Long("1")).getFk_estaciones();
+
+        int i;
+        for(i=0 ; i<= lista.size()-1;i++) {
+            estaciones = new LatLng(Double.parseDouble(lista.get(i).getLatitud()), Double.parseDouble(lista.get(i).getLongitud()));
+
+
+//            if(tag.equalsIgnoreCase(lista.get(i).getId().toString())){
+//                myMaker = map.addMarker(new MarkerOptions().position(punto).icon(BitmapDescriptorFactory.fromResource(R.mipmap.icon_estacion_seleccionado)));
+//                myMaker.setTag(lista.get(i).getId().toString());
+//                Picasso.with(getContext()).load(lista.get(i).getFoto()).into(photoEstacion);
+//                txtTitulo.setText(lista.get(i).getNombre().toString());
+//                txtDireccion.setText(lista.get(i).getDirecion().toString());
+//                hora.setText("08:00 - 23:00");
+//                idEstacion.setText(lista.get(i).getId().toString());
+//            }else{
+//                myMaker = map.addMarker(new MarkerOptions().position(punto).icon(BitmapDescriptorFactory.fromResource(R.mipmap.icon_estacion_noseleccionado)));
+//                myMaker.setTag(lista.get(i).getId().toString());
+//            }
+        }
+
+    }
+    private long String2Long(String s) {
+        return Long.valueOf(s);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        Log.d("Debug", "onRequestPermissionsResult"+  " - Code " +requestCode + mMap);
+        switch (requestCode) {
+            case 1:
+                // If request is cancelled, the result arrays are empty.
+                Log.d("Debug", "onRequestPermissionsResult - Vista por Defecto");
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //recargarVista = true;
+                    mGoogleApiClient.reconnect();
+
+                    //Validar permisos
+                    mMap.setMyLocationEnabled(true);
+                    mMap.getUiSettings().setMyLocationButtonEnabled(false);
+                    Log.d("Debug", "onRequestPermissionsResult - Aceptada");
+
+                }else{
+                    Log.d("Debug", "onRequestPermissionsResult - Denegados");
+                }
+                //return;
+
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+        Log.d("Debug", "onRequestPermissionsResult - Salir");
+    }
 
     private void translateStatusBar(){
         Window w = getWindow();
@@ -460,18 +636,6 @@ public class InicioActivity extends AppCompatActivity
         if (id == R.id.troncal) {
 
         }
-        /*if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        }  else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
