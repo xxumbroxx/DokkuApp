@@ -56,7 +56,6 @@ public class SimularData {
 
 */
 
-
         estacionRepositorio.insertOrUpdate(context,estacion_naranjal);
         estacionRepositorio.insertOrUpdate(context,estacion_izaguirre);
         estacionRepositorio.insertOrUpdate(context,estacion_pacifico);
@@ -64,6 +63,7 @@ public class SimularData {
         estacionRepositorio.insertOrUpdate(context,estacion_los_jazmines);
         estacionRepositorio.insertOrUpdate(context,estacion_tomas_valle);
         estacionRepositorio.insertOrUpdate(context,estacion_el_milagro);
+        estacionRepositorio.insertOrUpdate(context,estacion_uni);
         estacionRepositorio.insertOrUpdate(context,estacion_parque_del_trabajo);
         estacionRepositorio.insertOrUpdate(context,estacion_caqueta);
         estacionRepositorio.insertOrUpdate(context,estacion_dos_de_mayo);
