@@ -31,8 +31,11 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.Profile;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -52,12 +55,15 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import pe.com.gmd.dokkuapp.R;
 import pe.com.gmd.dokkuapp.domain.orm.ESTACION;
 import pe.com.gmd.dokkuapp.service.dao.impl.TIpoRepositoeio;
+import pe.com.gmd.dokkuapp.util.AppPreferences;
+import pe.com.gmd.dokkuapp.util.CircleTransform;
 import pe.com.gmd.dokkuapp.util.PermissionChecker;
 import pe.com.gmd.dokkuapp.util.Util;
 import pe.com.gmd.dokkuapp.view.fragment.MapsHowToGetFragmen;
@@ -129,9 +135,25 @@ public class InicioActivity extends AppCompatActivity
         btnRouteOne= (AppCompatButton) findViewById(R.id.btnRouteOne);
         btnRouteTwo= (AppCompatButton) findViewById(R.id.btnRouteTwo);
         btnRouteThree= (AppCompatButton) findViewById(R.id.btnRouteThree);
-
+        View headerView = getLayoutInflater().inflate(R.layout.nav_header_inicio, navigationView, false);
+        navigationView.addHeaderView(headerView);
         event();
+        ImageView imgUsuario= (ImageView) headerView.findViewById(R.id.img_usuario);
+        TextView nombreUsuario= (TextView) headerView.findViewById(R.id.usuario);
+        TextView mailUsuario= (TextView)headerView.findViewById(R.id.mail_usuario);
+        imgUsuario.setOnClickListener(this);
+        mailUsuario.setOnClickListener(this);
+        nombreUsuario.setOnClickListener(this);
 
+        Profile profileDefault = Profile.getCurrentProfile();
+
+        if (profileDefault != null){
+            nombreUsuario.setText(profileDefault.getName());
+
+            Picasso.with(this).load(profileDefault.getProfilePictureUri(100, 100)).transform(new CircleTransform()).into(imgUsuario);
+            AppPreferences preference = AppPreferences.getInstance(this);
+            mailUsuario.setText(preference._EmailLogin());
+        }
     }
 
     private void event(){
@@ -324,42 +346,45 @@ public class InicioActivity extends AppCompatActivity
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnSearchPlace:
+        if(v.getId()==R.id.img_usuario |v.getId()==R.id.mail_usuario|v.getId()==R.id.txt_usuario){
+            startActivity(new Intent(this,UsuarioActivity.class));
+        }else {
+            switch (v.getId()) {
+                case R.id.btnSearchPlace:
 //                if(searchPlace.isEnabled()){
                     openAutocompleteActivity();
 //                    searchPlace.setEnabled(false);//Se bloquea hasta cambiar de panatalla
 //                }
-                break;
-            case R.id.btn_gps:
-                if(mLocationCamera!=null && mLocationGPS!=null){
-                    if(Util.distanceBetweenCoordinate(mLocationCamera.getLatitude(),mLocationCamera.getLongitude(),mLocationGPS.getLatitude(),mLocationGPS.getLongitude(),"K")> DISTANCIA_FUERA_CENTRO_RUTA){
-                        btnGps.setImageDrawable(getResources().getDrawable(R.mipmap.gps));
+                    break;
+                case R.id.btn_gps:
+                    if (mLocationCamera != null && mLocationGPS != null) {
+                        if (Util.distanceBetweenCoordinate(mLocationCamera.getLatitude(), mLocationCamera.getLongitude(), mLocationGPS.getLatitude(), mLocationGPS.getLongitude(), "K") > DISTANCIA_FUERA_CENTRO_RUTA) {
+                            btnGps.setImageDrawable(getResources().getDrawable(R.mipmap.gps));
+                        }
+                        changeMap(mLocationGPS);
+                    } else {
+                        Toast.makeText(this, "No se encuentra la Ubicacion del GPS", Toast.LENGTH_SHORT).show();
                     }
-                    changeMap(mLocationGPS);
-                }else{
-                    Toast.makeText(this, "No se encuentra la Ubicacion del GPS", Toast.LENGTH_SHORT).show();
-                }
 
-                break;
-            case R.id.btnRouteOne:
+                    break;
+                case R.id.btnRouteOne:
 
-                sendToNavegation(0,-12.0461518,-77.0276599);
+                    sendToNavegation(0, -12.0461518, -77.0276599);
 
-                Toast.makeText(this, "btnRouteOne", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.btnRouteTwo:
-                sendToNavegation(1,-11.982802,-77.0608073);
+                    Toast.makeText(this, "btnRouteOne", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.btnRouteTwo:
+                    sendToNavegation(1, -11.982802, -77.0608073);
 
-                Toast.makeText(this, "btnRouteTwo", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.btnRouteThree:
-                sendToNavegation(0,-12.0576694,-77.0381649);
+                    Toast.makeText(this, "btnRouteTwo", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.btnRouteThree:
+                    sendToNavegation(0, -12.0576694, -77.0381649);
 
-                Toast.makeText(this, "btnRouteThree", Toast.LENGTH_SHORT).show();
-                break;
+                    Toast.makeText(this, "btnRouteThree", Toast.LENGTH_SHORT).show();
+                    break;
+            }
         }
-
     }
 
     /**Barra de Busqueda*/
