@@ -18,11 +18,11 @@ ________________________________________________________________________________
 
 #Android key hash
 
-Mac o Linux
+-Mac o Linux
 
 keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64
 
 
-Windows
+-Windows
 
 keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64
