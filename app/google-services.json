@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "279117512642",
+    "firebase_url": "https://dokkuapp.firebaseio.com",
+    "project_id": "dokkuapp",
+    "storage_bucket": "dokkuapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279117512642:android:26261a445a6c1341",
+        "android_client_info": {
+          "package_name": "pe.com.gmd.dokkuapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279117512642-3f5nls0efvq4llpcuou9ghch137m6prs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3Em6biT1dzgt8OXNgQ1BvAenXlTOO7Z0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
