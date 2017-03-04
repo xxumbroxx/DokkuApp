@@ -149,7 +149,7 @@ public class SimularData {
         estacionRepositorio.insertOrUpdate(context,estacion_san_martin);
         estacionRepositorio.insertOrUpdate(context,estacion_san_carlos);
         estacionRepositorio.insertOrUpdate(context,estacion_los_postes);
-
+        estacionRepositorio.insertOrUpdate(context,estacion_los_jardines);
 
 
 
