@@ -97,6 +97,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
     public void onResume() {
         super.onResume();
         mapa.onResume();
+        lineInfoEstacion.setVisibility(View.GONE);
     }
 
 
@@ -112,6 +113,7 @@ public class FirstMapFragment extends Fragment implements OnMapReadyCallback {
     public void onPause() {
         super.onPause();
         mapa.onPause();
+        lineInfoEstacion.setVisibility(View.GONE);
         first=true;
         //   apiClient.stopAutoManage(getActivity());
         //  apiClient.disconnect();
