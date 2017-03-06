@@ -14,7 +14,7 @@
         >
         <RelativeLayout
             android:layout_width="match_parent"
-            android:background="@drawable/header_color_img"
+            android:background="?colorAccent"
 
             android:layout_height="180dp">
             <ImageView

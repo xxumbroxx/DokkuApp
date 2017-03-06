@@ -32,8 +32,8 @@ public class Constants {
          * Slide(@titulo,@descripcion,@ImagenPagedrawable)
          */
         items.add(new Slide(R.mipmap.icon_metropolitano,R.string.d1,R.mipmap.slide_1));
-        items.add(new Slide(R.mipmap.icon_linea,R.string.d2,R.mipmap.slide_2));
-        items.add(new Slide(R.mipmap.icon_sit,R.string.d3,R.mipmap.slide_3));
+        items.add(new Slide(R.mipmap.icon_metropolitano,R.string.d2,R.mipmap.slide_2));
+        items.add(new Slide(R.mipmap.icon_metropolitano,R.string.d3,R.mipmap.slide_3));
 
         return items;
     }

@@ -647,14 +647,23 @@ public class InicioActivity extends AppCompatActivity
         int id = item.getItemId();
         switch (id){
             case R.id.troncal:{
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
                 startActivity(new Intent(this,DetalleActivity.class));
                 return true;
 
             }
-            case R.id.alimentador:{
+            case R.id.alimentador:{   DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
                 startActivity(new Intent(this,DetalleActivity.class));
                 return true;
 
+            }
+            case R.id.tarjetas_tarifas_metropolitano:{
+                Intent objTarjetas = new Intent(this,TarjetasActivity.class);
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+                startActivity(objTarjetas);
             }
         }
 

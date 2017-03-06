@@ -17,6 +17,10 @@
                     android:id="@+id/alimentador"
                     android:icon="@drawable/ic_directions_bus_black_24dp"
                     android:title="Alimentador" />
+                <item
+                    android:id="@+id/tarjetas_tarifas_metropolitano"
+                    android:icon="@drawable/ic_credit_card_black_24dp"
+                    android:title="Tarjetas y  tarifas" />
             </menu>
         </item>
         <item android:title="Metro de Lima">
@@ -50,10 +54,6 @@
 
             android:title="Mas">
             <menu>
-                <item
-                    android:id="@+id/tarjetas_tarifas"
-                    android:icon="@drawable/ic_credit_card_black_24dp"
-                    android:title="Tarjetas y  tarifas" />
                 <item
                     android:id="@+id/noticias"
                     android:icon="@drawable/ic_add_to_queue_black_24dp"
